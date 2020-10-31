@@ -1,0 +1,536 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            
+            /* 이건 플렉스 안에 있는 사진 */
+            .img {
+                width: 14em;
+                height: 20em;
+                display: inline;
+            }
+            
+            /* 플렉스 */
+            .container {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+                align-items: center;
+                align-content: center;
+            }
+            
+            /* 아이템 크기 플렉스 설정들 */
+            .container > div {
+                width: 500px;
+                flex-grow: 0; /* 창 크기에 따라 아이템 확대 보통은 0이 false 1이 true라고 생각해도 된다. */
+                flex-shrink: 1; /*  */
+                flex-basis: auto; /* 아이템 크기 */
+            }
+            
+            .item {
+                border-radius: 10px;
+                /*border-right: 1px solid black;*/
+                background-color: white;
+                margin-bottom:35px;
+                margin-top: 35px;
+                box-shadow: 10px 10px 3px 3px darkgray;
+               /* background-image: url(Image/movie_image/film.jpg);*/
+                
+            }
+            
+            .item > p {
+                
+            }
+            
+            /* 옆에 내용 */
+            #content {
+                padding-left: 20px;
+                padding-right: 20px;
+                /*border-top: 1px solid black;
+                border-bottom: 1px solid black;
+                border-right: 1px solid black;
+                */
+            }
+            
+            .item:hover {
+                cursor: pointer;
+            }
+            
+            .item:hover #content {
+                border: none;
+            }
+            
+            .item:active {
+                
+            }
+            
+            /* 버튼들 */
+            .btn-left, .btn-right {
+                border: 1px solid black;
+                border-radius: 2px;
+                width: 50px;
+                height: 50px;
+                margin-bottom: 50px;
+                background-color: white;
+            }
+            
+            .btn-left {
+                margin-left: 50px;
+            }
+            
+            .btn {
+                margin-top: -270px;
+                width: 600px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .btn-left:hover, .btn-right:hover {
+                cursor: pointer;
+                background-color: lavender;
+                color: black;
+            }
+            
+            .btn-right {
+                margin-left: 400px;
+            }
+            
+            .black {
+                text-decoration: none;
+                color: black;
+            }
+            .mySlides{
+                padding-top: 270px;
+                padding-bottom: 270px;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="background-image: url(Image/movie_image/film.jpg); background-repeat: no-repeat; background-size: 100em 85em">
+            <div class="mySlides">
+                <div class="container">
+                    <div class="item">
+                        <table>
+                            <tr>
+                                <td >
+                                    <img src="Image/movie_image/weatheringwithyou.jpg" class="img">
+                                </td>
+                                <td id="content">
+                                    <p>
+                                        날씨의 아이 <br><br> 
+                                    </p>
+                                    <hr>
+                                    <br>
+                                    <p>
+                                        신카이 마코토
+                                    </p>
+                                    <br><hr><br><br>
+                                    <p>
+                                        “이제 비는 그치고, 우리의 세상이 빛나기 시작할 거야”<br>
+                                        비가 그치지 않던 어느 여름날,<br>
+                                        가출 소년 ‘호다카’는 수상한 잡지사에 취직하게 되고
+                                        비밀스러운 소녀 ‘히나’를 우연히 만난다.
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="item">
+                        <table>
+                            <tr>
+                                <td >
+                                    <img src="Image/movie_image/hair.jpg" class="img">
+                                </td>
+                                <td id="content">
+                                    <p>
+                                        헤어 스프레이 <br><br> 
+                                    </p>
+                                    <hr>
+                                    <br>
+                                    <p>
+                                        아담 쉥크만
+                                    </p>
+                                    <br><hr><br><br>
+                                    <p>
+                                        슈퍼 헤비급 몸매의 ‘트레이시(니키 블론스키)’는 한껏 부풀린 최신 유행 헤어스타일을 하고 언제 어디서든 유쾌! 상쾌! 통쾌한 성격을 잃지 않는다. 
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="item">
+                        <table>
+                            <tr>
+                                <td >
+                                    <img src="Image/movie_image/coco.jpg" class="img">
+                                </td>
+                                <td id="content">
+                                    <p>
+                                        코코 <br><br> 
+                                    </p>
+                                    <hr>
+                                    <br>
+                                    <p>
+                                        리 언크리치
+                                    </p>
+                                    <br><hr><br><br>
+                                    <p>
+                                        뮤지션을 꿈꾸는 소년 미구엘은 전설적인 가수 에르네스토의 기타에 손을 댔다 ‘죽은 자들의 세상’에 들어가게 된다. 
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="item">
+                        <table>
+                            <tr>
+                                <td >
+                                    <img src="Image/movie_image/queen.jpg" class="img">
+                                </td>
+                                <td id="content">
+                                    <p>
+                                        보헤미안 랩소디 <br><br> 
+                                    </p>
+                                    <hr>
+                                    <br>
+                                    <p>
+                                        브라이언 싱어
+                                    </p>
+                                    <br><hr><br><br>
+                                    <p>
+                                        그러나 독보적인 존재감을 뿜어내던 ‘프레디 머큐리’는 솔로 데뷔라는 유혹에 흔들리게 되고 결국 오랜 시간 함께 해왔던 멤버들과 결별을 선언하게 되는데…
+
+
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="mySlides">
+                <div class="container">
+                    <div class="item">
+                        <table>
+                            <tr>
+                                <td >
+                                    <img src="Image/movie_image/harmoney.jpg" class="img">
+                                </td>
+                                <td id="content">
+                                    <p>
+                                        하모니 <br><br> 
+                                    </p>
+                                    <hr>
+                                    <br>
+                                    <p>
+                                        강대규
+                                    </p>
+                                    <br><hr><br><br>
+                                    <p>
+                                        가족마저도 등을 돌린 사형수 문옥(나문희), 저마다 아픈 사연을 가진 채 살아가는 여자교도소에 합창단이 결성되면서 사랑하는 이들을 위해 가슴 찡한 감동의 무대를 만들어가는 이야기
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="item">
+                        <table>
+                            <tr>
+                                <td >
+                                    <img src="Image/movie_image/highschool.jpg" class="img">
+                                </td>
+                                <td id="content">
+                                    <p>
+                                        하이스쿨 뮤지컬 <br><br> 
+                                    </p>
+                                    <hr>
+                                    <br>
+                                    <p>
+                                        케니 오테가
+                                    </p>
+                                    <br><hr><br><br>
+                                    <p>
+                                        무겁고 칙칙한건 우리 스타일이 아니지! <br>
+                                        신나는 음악, 화려한 댄스, 힙 스타일의 스쿨 라이프! <br>
+                                        우리가 궁금해? 자 따라와봐!
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                     <div class="item">
+                        <table>
+                            <tr>
+                                <td >
+                                    <img src="Image/movie_image/idiots.jpg" class="img">
+                                </td>
+                                <td id="content">
+                                    <p>
+                                        세 얼간이 <br><br> 
+                                    </p>
+                                    <hr>
+                                    <br>
+                                    <p>
+                                        라지쿠마르 히라니
+                                    </p>
+                                    <br><hr><br><br>
+                                    <p>
+                                        친구라는 이름으로 뭉친 `세 얼간이`! 삐딱한 천재들의 진정한 꿈을 찾기 위한 세상 뒤집기 한판이 시작된다!
+
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                     <div class="item">
+                        <table>
+                            <tr>
+                                <td >
+                                    <img src="Image/movie_image/joker.jpg" class="img">
+                                </td>
+                                <td id="content">
+                                    <p>
+                                        조커 <br><br> 
+                                    </p>
+                                    <hr>
+                                    <br>
+                                    <p>
+                                        토드 필립스
+                                    </p>
+                                    <br><hr><br><br>
+                                    <p>
+                                        고담시의 광대 아서 플렉은 코미디언을 꿈꾸는 남자.
+                                        하지만 모두가 미쳐가는 코미디 같은 세상에서 맨 정신으로는 그가 설 자리가 없음을 깨닫게 되는데…
+                                        이제껏 본 적 없는 진짜 ‘조커’를 만나라!
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="mySlides">
+                <div class="container">
+                     <div class="item">
+                        <table>
+                            <tr>
+                                <td>
+                                    <img src="Image/movie_image/music.jpg" class="img">
+                                </td>
+                                <td id="content">
+                                    <p>
+                                        사운드 오브 뮤직 <br><br> 
+                                    </p>
+                                    <hr>
+                                    <br>
+                                    <p>
+                                        로버트 와이즈
+                                    </p>
+                                    <br><hr><br><br>
+                                    <p>
+                                        ‘마리아’는 자신이 ‘폰 트랩 대령’을 사랑하고 있다는 사실을 깨닫게 되고, 자신만의 비밀을 간직한 채 아이들의 곁을 떠나 다시 수녀원에 들어가기로 결심하는데… 
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                     <div class="item">
+                        <table>
+                            <tr>
+                                <td >
+                                    <img src="Image/movie_image/nania.jpg" class="img">
+                                </td>
+                                <td id="content">
+                                    <p>
+                                        나니아 연대기 <br><br> 
+                                    </p>
+                                    <hr>
+                                    <br>
+                                    <p>
+                                        마이클 애비드
+                                    </p>
+                                    <br><hr><br><br>
+                                    <p>
+                                        신비한 5개의 섬, 사라진 7개의 마법 검... <br>
+                                        위협적인 녹색 안개의 유혹에 얽힌 미스터리 <br>
+                                        마법과 판타지로 가득한 진짜 나니아 세상과 만나는 여행!!
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="item">
+                        <table>
+                            <tr>
+                                <td >
+                                    <img src="Image/movie_image/wolf.jpg" class="img">
+                                </td>
+                                <td id="content">
+                                    <p>
+                                        늑대소년 <br><br> 
+                                    </p>
+                                    <hr>
+                                    <br>
+                                    <p>
+                                        조성희
+                                    </p>
+                                    <br><hr><br><br>
+                                    <p>
+                                        어느 날 예기치 못한 위기 속에 소년의 숨겨져 있던 위험한 본성이 드러나고, 소년은 순식간에 마을 사람들에게 두려움과 공포의 대상이 되어버리는데……
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                     <div class="item">
+                        <table>
+                            <tr>
+                                <td >
+                                    <img src="Image/movie_image/yesterday.jpg" class="img">
+                                </td>
+                                <td id="content">
+                                    <p>
+                                        예스터데이 <br><br> 
+                                    </p>
+                                    <hr>
+                                    <br>
+                                    <p>
+                                        대니 보일
+                                    </p>
+                                    <br><hr><br><br>
+                                    <p>
+                                        세상에선 비틀즈가 사라지고, 오직 잭만이 그들의 음악을 기억하게 된다. 특별한 기회를 만난 잭은 세계적인 스타가 될 운명에 섰는데…
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="mySlides">
+                <div class="container">
+                     <div class="item">
+                        <table>
+                            <tr>
+                                <td >
+                                    <img src="Image/movie_image/time.jpg" class="img">
+                                </td>
+                                <td id="content">
+                                    <p>
+                                        시간을 달리는 소녀 <br><br> 
+                                    </p>
+                                    <hr>
+                                    <br>
+                                    <p>
+                                        호소다 마모루
+                                    </p>
+                                    <br><hr><br><br>
+                                    <p> 
+                                        제가 당할 뻔한 사고를 대신 고스케가 당하는 불상사까지… 타임리프로 사람의 마음을 내 멋대로 바꾼 벌을 받고 있나 봐요. 전 이제 어떡하면 좋을까요?
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                     <div class="item">
+                        <table>
+                            <tr>
+                                <td >
+                                    <img src="Image/movie_image/tommorow.jpg" class="img">
+                                </td>
+                                <td id="content">
+                                    <p>
+                                        나는 내일 어제의 너와 만난다. <br><br> 
+                                    </p>
+                                    <hr>
+                                    <br>
+                                    <p>
+                                        미키 타카히로
+                                    </p>
+                                    <br><hr><br><br>
+                                    <p>
+                                        그 비밀은 바로 타카토시와 에미의 시간은 서로 반대로 흐르고 있고, 교차되는 시간 속에서 함께 할 수 있는 시간은 오직 30일뿐이라는 것.
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="item">
+                        <table>
+                            <tr>
+                                <td >
+                                    <img src="Image/movie_image/rush.jpg" class="img">
+                                </td>
+                                <td id="content">
+                                    <p>
+                                        어거스트 러쉬 <br><br> 
+                                    </p>
+                                    <hr>
+                                    <br>
+                                    <p>
+                                        커스틴 쉐리단
+                                    </p>
+                                    <br><hr><br><br>
+                                    <p>
+                                        마법 같이 신비로운 어느 가을 밤, 그리고 다시 뉴욕.
+                                        ‘어거스트 러쉬’의 음악이 불러 낸 기적은
+                                        그들을 다시 만나게 할 수 있을까?
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="btn">
+            <button class="btn-left" onclick="plusDivs(-1)">&#10094;</button>
+            <button class="btn-right" onclick="plusDivs(1)">&#10095;</button>
+        </div>
+        
+        <script>
+            var slideIndex = 1;
+            showDivs(slideIndex);
+
+            function plusDivs(n) {
+              showDivs(slideIndex += n);
+            }
+
+            function showDivs(n) {
+              var i;
+              var x = document.getElementsByClassName("mySlides");
+              if (n > x.length) {slideIndex = 1}
+              if (n < 1) {slideIndex = x.length}
+              for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+              }
+              x[slideIndex-1].style.display = "block";  
+            }
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

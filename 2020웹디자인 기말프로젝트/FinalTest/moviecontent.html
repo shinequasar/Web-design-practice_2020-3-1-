@@ -1,0 +1,271 @@
+<!doctype html>
+<html>
+    <head>
+        <title>
+            나만 친구 없어 &#91; MBTI &#93;
+        </title>
+        <meta charset="utf-8">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="css/default.css">
+        <link rel="stylesheet" href="css/mbticss.css">
+        <link href="https://fonts.googleapis.com/css2?family=Gaegu&family=Noto+Sans+KR:wght@400&family=Noto+Serif+KR:wght@600&display=swap" rel="stylesheet">
+        <style>
+            .show-mbti {
+                border-top: 2px solid black;
+                height: 400px;
+                margin-bottom: 50px;
+            }
+            /*다양한 mbti유형들 코너에 필요한 css*/
+          .container_mbti{
+                width: 100%;
+                height: 100%;
+                margin: 0 auto; /* 위쪽아래쪽은 마진 0, 좌우는 auto*/
+                padding: 29px;
+                padding-top: 2em;
+                position: absolute;
+                          
+            }
+            
+            .header h1 {
+                top: 84px;
+            }
+            
+            .heading{
+                font-size: 3em;
+                font-weight: 500;
+                text-align: center;
+                padding: 0;
+                font-family: 'Gaegu', cursive;
+            }
+            .gallery{
+                display: flex;
+                flex-wrap: wrap;
+                
+            }
+            .gallery-item{
+                margin: 7px;
+                box-shadow: 0.3em 0.4em 0.4em rgba(0,0,0,0.4);  /*em은 상대적인 크기라 사용*/
+                overflow: hidden; /*넘치는건 안보이게함*/
+                width: 8.5em;
+                height: 12em;
+                object-fit: cover;
+            }
+            .gallery-image{
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;  /*어떤 영역에 보일 이미지의 가로세로가 영역과 같지 않아도 일부분만 보이게 해 이미지를 왜곡하지 않는 것*/
+                transition: transform 400ms ease-out; 
+            }
+            .gallery-image:hover{
+                transform: scale(1.15);
+            }  
+            
+            .result2 {
+                position: absolute;
+                top: 190em;
+                left: 1%;
+                margin-top: 7em;
+                margin-left: 1.5em;
+                margin-right: auto;
+                width: 98%;
+                height: 100%;
+            }
+            .intro_img{
+                margin-top:20px;
+                margin-bottom: 20px;
+                width: 15em;
+            }
+            #line{
+                border-bottom: 2px solid black;
+                padding-top: 2em;
+                padding-bottom: 30px; 
+            }
+            .font{
+               font-family: 'Noto Serif KR', serif;
+                margin-right: 25px;
+            }
+            .font2{
+                font-family: 'Gaegu', cursive;
+            }
+            .tablecolor{
+                background-color: antiquewhite;
+                padding: 20px 50px 40px 20px;
+            }
+            .btn {
+                text-align: center;
+                display: block;
+                text-decoration: none;
+                color: white;
+                margin-top: 30px;
+                padding: 10px;
+                width: 130px;
+                border-radius: 4px;
+                margin-left: auto;
+                margin-right: auto;
+                background-color: black;
+            }
+            
+            .btn:hover {
+                color: black;
+                background-color: coral;
+            }
+            .best2 {
+                position: absolute;
+                top: 120px;
+                left: 1%;
+                margin-left: auto;
+                margin-right: auto;
+                width: 98%;
+            }
+            
+            
+            .best2 > h1 {
+                margin-bottom: 14px;
+            }
+            .detail-nav {
+                top: 1195px;
+                /*background: url(Image/movie.jpg);*/
+            }
+            .detail-nav-item2 {
+                float: left;
+                margin-right: 120px;
+            }
+            .second-display {
+                top: 1245px;
+                height: 1400px;
+                border-radius: 2px;
+               /* background: linear-gradient(to bottom , lightblue, white); */
+            }
+        </style>
+    </head>
+    <body>
+        <div class="nav"  style="background-color: antiquewhite; padding-bottom: 30px">
+            <ul class="nav-container">
+                <li class="nav-item">
+                    <a class="hiper" href="Main.html">
+                        <i class="hiper2 hiper fa fa-home"></i>
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="hiper" href="bookcontent.html">
+                        <i class="hiper2 hiper fa fa-book"></i>
+                        Book
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="hiper" href="moviecontent.html">
+                        <i class="hiper2 hiper fa fa-ticket"></i>
+                        Movie
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="hiper" href="gamecontent.html">
+                        <i class="hiper2 hiper fa fa-gamepad"></i>
+                        Game
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="hiper" href="mbticontent.html">
+                        <i class="hiper2 hiper fa fa-clipboard"></i>
+                        MBTI
+                    </a>
+                </li>
+                <li class="nav-item info">
+                    <a class="hiper" href="info.html">
+                        <i class="hiper2 hiper fa fa-users"></i>
+                        My Page
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="header">
+            <h1>
+                MOVIE
+            </h1>
+            <p  class="font2" style="font-size: 1.4em; padding-right: 30px; width: 19em; text-align: right;">
+                혼자 영화보는 거 그거 부끄러운 거 아니다?<br>
+                아니 뭐~ 둘이 봐도 되고~
+            </p>
+        </div>
+        <div class="best2">
+            <h1 class="font" style="font-size: 3em;">
+                Best 추천 영화
+            </h1>
+            <div class="show-mbti">
+                <table style=" margin-left: auto; margin-right: auto;" >
+                   <tr style="solid border: 1px" class="tb" >
+                       <th><a href="https://www.youtube.com/embed/HCXLY0RmCEM" target="video"><img src="Image/movie_image/readyplayerone.jpg" class="intro_img" style="padding-left:0px;margin-right:100px;margin-left: 100px"></a></th>
+                       <th>&emsp;<a href="https://www.youtube.com/embed/jnq9Vb381hY" target="video"><img src="Image/movie_image/sommer.jpg" class="intro_img" style="padding-left: 0px;margin-right:100px"></a></th>
+                       <th><a href="https://www.youtube.com/embed/x60mB0zXZ38" target="video"><img src="Image/movie_image/joker.jpg" class="intro_img" style="padding-left: 0px; margin-right: 100px"></a></th>
+                   </tr><br><br> 
+                </table>  
+            </div>
+        </div>
+        
+        <p align="middle" style="padding-top: 45em">
+            <iframe id="vid" width="100%" height="520" name="video" src="https://www.youtube.com/embed/HCXLY0RmCEM" frameborder="0"></iframe>
+        </p>
+        
+        <div class="result">
+        <div class="detail-nav">
+            <ul class="detail-nav-container">
+                <li class="detail-nav-item2">
+                    <a class="detail-hiper" href="averagemovie1.html" target="new">
+                        SF/판타지
+                    </a>
+                </li>
+                <li class="detail-nav-item2">
+                    <a class="detail-hiper" href="averagemovie2.html" target="new">
+                        추리 / 액션
+                    </a>
+                </li>
+                <li class="detail-nav-item2">
+                    <a class="detail-hiper" href="averagemovie3.html" target="new">
+                        드라마
+                    </a>
+                </li>
+                <li class="detail-nav-item2">
+                    <a class="detail-hiper" href="averagemovie4.html" target="new">
+                        로맨스
+                    </a>
+                </li>
+                <li class="detail-nav-item last">
+                    <a class="detail-hiper" href="averagemovie5.html" target="new">
+                        애니메이션
+                    </a>
+                </li>
+            </ul>
+        </div>
+            
+            
+        <div class="second-display">
+            <iframe src="averagemovie.html" name="new" class="second-display-content" scrolling="no"></iframe>
+        </div>
+        </div>
+       
+      
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

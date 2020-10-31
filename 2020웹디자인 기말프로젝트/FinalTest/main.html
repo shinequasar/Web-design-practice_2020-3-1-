@@ -1,0 +1,393 @@
+<!doctype html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>
+            나만 친구 없어
+        </title>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Gaegu&family=Noto+Sans+KR:wght@400&family=Noto+Serif+KR:wght@600&display=swap" rel="stylesheet">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            ::-webkit-scrollbar {
+                display: none;
+            }
+
+            .container {
+                background-image: url(Image/purpplegreen.jpg);
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: absolute;
+                background-attachment: fixed;
+                height: 100%;
+                width: 100%;
+                top: 100%;
+                position: absolute;
+              
+            }
+
+            .bg-1 {
+                background-image: url(Image/purpple.jpg);
+                width: 100%;
+                height: 100%;
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: absolute;
+                background-attachment: fixed;
+                z-index: 1;
+            }
+            
+            .hiper {
+                text-decoration: none;
+                color: white;
+                margin-right: 3px;
+                visibility: hidden;
+            }
+            
+            .hiper2 {
+                font-size: 1.5em;
+                text-decoration: none;
+                color: white;
+                visibility: visible;
+            }
+            
+            .nav-item:hover .hiper {
+                visibility: visible;
+            }
+            
+            .nav {
+                width: 100%;
+                z-index: 3;
+                
+            }
+            
+            .nav-item {
+                font-size: 1.3em;
+                color: black;
+                margin-top: 10px;
+            }
+            
+            .nav-container {
+                list-style-type: none;
+                z-index: 3;
+                position: absolute;
+                top: 33%;
+                right: 1%;
+                text-align: end;
+                position: fixed;
+            }
+            
+            .head {
+                font-size: 2.7em;
+                z-index: 3;
+                position: absolute;
+                top: 40%;
+                left: 20%;
+                transform: translate(-50%, -50%);
+                color: white;
+                font-family: 'Noto Serif KR', serif;
+            }
+
+            .content1 {
+                font-size: 1.6em;
+                text-align:right;
+                z-index: 3;
+                position: absolute;
+                top: 70%;
+                left: 70%;
+                width: 45%;
+                transform: translate(-50%, -50%);
+                font-family: 'Gaegu', cursive;
+                color: white;
+                padding: 30px 30px 30px 30px;
+            }
+
+            .book-container {
+                background-image: url(Image/book.jpg);
+                width: 100%;
+                height: 100%;
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: absolute;
+                top: 200%;
+                color: white;
+                background-attachment: fixed;
+                z-index: 1;
+            }
+
+            .movie-container {
+                background-image: url(Image/green.jpg);
+                width: 100%;
+                height: 100%;
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: absolute;
+                top: 300%;
+                background-attachment: fixed;
+                color: white;
+                z-index: 1;
+            }
+
+            .game-container {
+                background-image: url(Image/game.jpg);
+                width: 100%;
+                height: 100%;
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: absolute;
+                top: 400%;
+                background-attachment: fixed;
+                z-index: 1;
+            }
+
+            .mbti-container {
+                background-image: url(Image/yellow.jpg);
+                width: 100%;
+                height: 100%;
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: absolute;
+                top: 500%;
+                background-attachment: fixed;
+                z-index: 1;
+            }
+            
+            .all-content {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            
+            .all-content > h1, p {
+                text-align: center;
+            }
+            
+            .all-content > h1 {
+                font-size: 5em;
+            }
+            
+            .all-content > p {
+                text-align: center;
+                font-size: 1.7em;
+                font-family: 'Gaegu', cursive;
+            }
+            
+            .all-content > a {
+                text-align: center;
+                font-size: 21px;
+                font-family: 'Gaegu', cursive;
+            }
+            .second-content {
+                font-weight: bold;
+                margin-top: 30px;
+            }
+            
+            .btn {
+                text-align: center;
+                display: block;
+                text-decoration: none;
+                color: white;
+                border: 1px solid black;
+                margin-top: 30px;
+                padding: 10px;
+                width: 130px;
+                border-radius: 4px;
+                margin-left: auto;
+                margin-right: auto;
+                background-color: black;
+            }
+            
+            .btn:hover {
+                color: black;
+                background-color: white;
+            }
+            
+            #page1 {
+                color: white;
+                text-align: center;
+                padding-top: 6%;
+                font-family: 'Noto Serif KR', serif;
+                font-weight: bold;
+                font-size: 2.3em;
+            }
+            
+            #page1_1 {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                color: white;
+                padding: 10px;
+                text-align: center;
+                background-color: rgba(255,255,255,0.5);
+                width: 70%;
+                height: 60%;
+                z-index: 3;
+                color: #323232;
+                font-size: 1.1em;
+                font-family: 'Noto Serif KR', serif;
+            }
+            
+
+        </style>
+    </head>
+
+    <body>
+        <div class="nav">
+            <ul class="nav-container">
+                <li class="nav-item">
+                    <a class="hiper" href="javascript:void(0)" onclick="scrolling(event,'#home')">
+                        Home
+                        <i class="hiper2 hiper fa fa-home"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="hiper" href="javascript:void(0)" onclick="scrolling(event,'#Book')">
+                        Book
+                        <i class="hiper2 hiper fa fa-book"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="hiper" href="javascript:void(0)" onclick="scrolling(event,'#Movie')">
+                        Movie
+                        <i class="hiper2 hiper fa fa-ticket"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="hiper" href="javascript:void(0)" onclick="scrolling(event,'#Game')">
+                        Game
+                        <i class="hiper2 hiper fa fa-gamepad"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="hiper" href="javascript:void(0)" onclick="scrolling(event,'#MBTI')">
+                        MBTI
+                        <i class="hiper2 hiper fa fa-clipboard"></i>
+                    </a>
+                </li>
+                <li class="nav-item info">
+                    <a class="hiper" href="info.html">
+                        My Page
+                        <i class="hiper2 hiper fa fa-users"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="bg-1" id="home">
+        </div>
+        <div class="head">
+            <h1>
+                나만<br> 친구<span style="font-weight: 10">없어</span><br>&emsp; |<br>
+            </h1>
+        </div>
+        <div class="content1">
+            <p style="text-align:right ">
+                코로나 때문인 척 밖에 안가는 사람들,<br> 다 알아 코로나 때문 아니잖아. <br>
+                남탓하지 말고 여기 들어와서 이거나 한 번 보고 가.<br>
+                <span style="color: #faf58c">친구는 못 만들어줘도 시간은 지루하지 않게 해줄게!</span><br><br>
+                들어와서 한 번 놀고 가<br><span style="font-size: 0.8em">(돈도 안 들어 보고만 가, 보고만)</span>
+            </p>
+        </div>
+        <div class="container">
+            <h1 id="page1">"<span style="color: #faf58c">나만 친구 없어</span>는 이렇게 만들어졌어."</h1><br><br><br>
+
+            <p id="page1_1">
+               요즘 밖으로 나가기 힘들지? <br><br>
+               집에서 가만히 있기만 하는 것도 이제 지쳤을거야.<br>
+                심심한데 딱히 나가서 할 것도 없고,<br> 같이 놀러가자고 하기엔<br> 주변사람들은 왜 그렇게 바빠보이는 건지.<br><br>
+               <span style="color: saddlebrown">네가 뭘 좋아할 지 몰라서 다 준비해봤어.</span><br><br>
+                이 곳에서만큼은 눈치보지말고 좋아하는 걸 즐겨봐.<br><br>
+                좋아하는게 없다고?<br> <span style="color: saddlebrown">곧 만날 수 있을거야.</span>
+
+            </p>
+        </div>
+        <div id="Book" class="book-container">
+            <div class="all-content">
+                <h1>
+                    Book(책)
+                </h1>
+                <p class="second-content" >
+                    ※ 책은 서서 읽으시면 안 됩니다.
+                </p>
+                <a href="bookcontent.html" class="btn">
+                     책 보러 가기
+                </a>
+            </div>
+        </div>
+        <div id="Movie" class="movie-container">
+            <div class="all-content">
+                <h1>
+                    Movie(영화)
+                </h1>
+                <p class="second-content">
+                    ※ 앞 좌석을 발로 차지 마십시오.
+                </p>
+                <a href="moviecontent.html" class="btn" style="width: 150px; margin-left: auto; margin-right: auto;">
+                    영화 보러 가기
+                </a>
+            </div>
+        </div>
+        <div id="Game" class="game-container">
+            <div class="all-content">
+                <h1>
+                    Game(오락)
+                </h1>
+                <p class="second-content">
+                    ※ 매너 채팅 부탁드립니다.
+                </p>
+                <a href="gamecontent.html" class="btn" style="width: 150px; margin-left: auto; margin-right: auto;">
+                    게임 하러 가기
+                </a>
+            </div>
+        </div>
+        <div id="MBTI" class="mbti-container">
+            <div class="all-content">
+                <h1>
+                    MBTI(심리검사)
+                </h1>
+                <p class="second-content">
+                    ※ 타로보다 믿을만할지도
+                </p>
+                <a href="mbticontent.html" class="btn">
+                    검사받기
+                </a>
+            </div>
+        </div>
+        <script>
+            function scrolling(evt, loc) {
+                var offset = $(loc).offset();
+                $('html, body').animate({
+                    scrollTop: offset.top
+                }, 800);
+            }
+
+        </script>
+    </body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

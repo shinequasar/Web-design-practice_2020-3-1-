@@ -1,0 +1,251 @@
+<!doctype html>
+<html>
+    <head>
+        <title>
+            나만 친구 없어 &#91; MBTI &#93;
+        </title>
+        <meta charset="utf-8">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="css/default.css">
+        <link rel="stylesheet" href="css/mbticss.css">
+        <link href="https://fonts.googleapis.com/css2?family=Gaegu&family=Noto+Sans+KR:wght@400&family=Noto+Serif+KR:wght@600&display=swap" rel="stylesheet">
+        <style>
+            .heading{
+                font-size: 3em;
+                font-weight: 500;
+                text-align: center;
+                padding: 0;
+                font-family: 'Gaegu', cursive;
+            }
+           
+
+            .font{
+               font-family: 'Noto Serif KR', serif;
+                margin-right: 25px;
+            }
+            .font2{
+                font-family: 'Gaegu', cursive;
+            }
+            .best2 {
+                position: absolute;
+                top: 130px;
+                left: 3%;
+                margin-left: auto;
+                margin-right: auto;
+                width: 98%;
+            }
+
+            .best2 > h1 {
+                margin-bottom: 14px;
+                margin-top: 60px;
+            }
+             .container3 > div{
+                border-radius: 5px;
+                padding: 10px;
+            }
+            .container3{
+                height: 97%;
+                display: grid;
+                grid-template-columns: 200px 200px 200px 200px;
+                grid-template-rows: 100px 400px 200px;
+                grid-gap: 5px;
+                grid-template-areas: 
+                    "b4 b1 b1 b1"
+                    "b2 b2 b3 b3"
+                    "b6 b6 b6 b6"
+                    "b6 b6 b6 b6";
+            }
+            .todo2 {
+                    position: absolute;
+                    top: 200px;
+                    left: 1%;
+                    margin-top: 7em;
+                    margin-left: auto;
+                    margin-right: auto;
+                    width: 98%;
+                    height: 80%;
+                }
+            .box1{
+                grid-area: b1;
+                /*background: linear-gradient(to bottom, white, khaki);*/
+                background-color: khaki;
+                background-image: url(Image/colors/yellowcolor.JPG);
+                border: 1px solid lightgray;
+            }
+            .box2{
+                /*background: linear-gradient(to bottom, white, lightsteelblue);*/
+                border: none;
+                grid-area: b2;
+                background-color: lightsteelblue;
+                background-image: url(Image/colors/skybluecolor.JPG);
+                border: 1px solid lightgray;
+            }
+            .box3{
+                grid-area: b3;
+                /*background: linear-gradient(to bottom, white, limegreen);*/
+                border: none;
+                background-image: url(Image/colors/greencolor.JPG);
+                border: 1px solid lightgray;
+            }
+            .box4{
+                grid-area: b4;
+                border: 1px solid lightgray;
+                background-image: url(Image/colors/pinkcolor.JPG);
+            }
+            .box5{
+                grid-area: b5;
+                background-color: white;
+                
+            }
+            .box6{
+                grid-area: b6;
+                /*background: linear-gradient(to bottom, white, lightsalmon);*/
+                border: none;
+                background-image: url(Image/colors/pinkcolor.JPG);
+                border: 1px solid lightgray;
+            }
+            
+            h6 {
+                border-bottom: 3px solid lightgray;
+                padding-bottom: 5px;
+            }
+            
+            #book {
+                box-shadow: 0px 0px 30px 7px STEELBLUE;
+               display: block;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 30px;
+            }
+            
+            #movie {
+                box-shadow: 0px 0px 30px 7px forestgreen;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 30px;
+            }
+            
+            #game {
+                box-shadow: 0px 0px 30px 7px indianred;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 70px;
+            }
+            
+            td p {
+                width: 100vw;
+                
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="nav"  style="background-color: rosybrown; padding-bottom: 30px">
+            <ul class="nav-container">
+                <li class="nav-item">
+                    <a class="hiper" href="Main.html">
+                        <i class="hiper2 hiper fa fa-home"></i>
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="hiper" href="bookcontent.html">
+                        <i class="hiper2 hiper fa fa-book"></i>
+                        Book
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="hiper" href="moviecontent.html">
+                        <i class="hiper2 hiper fa fa-ticket"></i>
+                        Movie
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="hiper" href="gamecontent.html">
+                        <i class="hiper2 hiper fa fa-gamepad"></i>
+                        Game
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="hiper" href="mbticontent.html">
+                        <i class="hiper2 hiper fa fa-clipboard"></i>
+                        MBTI
+                    </a>
+                </li>
+                <li class="nav-item info">
+                    <a class="hiper" href="info.html">
+                        <i class="hiper2 hiper fa fa-users"></i>
+                        My Page
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="header">
+            <h1>
+                My Page
+            </h1>
+            <p  class="font2" style="font-size: 1.4em; padding-right: 100px; width: 25em; text-align: right;">
+                나도 몰랐던 나의 취향들! 
+            </p>
+        </div>
+        <div class="best2">
+            <h1 class="font" style="font-size: 3em;text-align: center;">
+                 About Me 
+            </h1>
+            
+        </div>
+        
+        <div class="todo2" >
+             <div class="container3" style="width: 50em; margin-left: auto;margin-right: auto;">
+                <div class="box1">
+                    <h6 class="font">나는 이런 사람이야! <br></h6>
+                    <h5 class="font" style="text-align: center;">MBTI : ISTJ / 세상의 소금형. 한번 시작한 일은 끝까지 해내는 사람들</h5>
+                </div>
+                <div class="box2">
+                    <h6 class="font">내가 좋아하는 책은 말이야..!</h6>
+                    <a href="bookcontent.html">
+                    <img src="Image/secret.jpg" width="200px" height="300px" id="book">
+                     </a>
+                 </div>
+                <div class="box3">
+                    <h6 class="font">난 사실 이런 영화가 좋아</h6>
+                    <img src="Image/movie_image/readyplayerone.jpg" width="200px" height="300px" id="movie"  >     
+                 </div>
+                <div class="box4">
+                    <h6 class="font">NAME : </h6>
+                    <h5 style="text-align: center;" class="font">김프앤</h5>
+                 </div>
+                <div class="box6">
+                   <h6 class="font">게임은 역시 이거지</h6>
+                    <img src="Image/chasinglight.jpg" width="380px" height="200px" id="game" class="font">
+                 </div>
+            </div>
+        </div>
+       
+       
+      
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,386 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            
+            /* 이건 플렉스 안에 있는 사진 */
+            .img {
+                width: 14em;
+                height: 20em;
+                display: inline;
+            }
+            
+            /* 플렉스 */
+            .container {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+                align-items: center;
+                align-content: center;
+            }
+            
+            /* 아이템 크기 플렉스 설정들 */
+            .container > div {
+                width: 500px;
+                flex-grow: 0; /* 창 크기에 따라 아이템 확대 보통은 0이 false 1이 true라고 생각해도 된다. */
+                flex-shrink: 1; /*  */
+                flex-basis: auto; /* 아이템 크기 */
+            }
+            
+            .item {
+                border-radius: 10px;
+                /*border-right: 1px solid black;*/
+                background-color: white;
+                margin-bottom:35px;
+                margin-top: 35px;
+                box-shadow: 10px 10px 3px 3px darkgray;
+               /* background-image: url(Image/movie_image/film.jpg);*/
+                
+            }
+            
+            .item > p {
+                
+            }
+            
+            /* 옆에 내용 */
+            #content {
+                padding-left: 20px;
+                padding-right: 20px;
+                /*border-top: 1px solid black;
+                border-bottom: 1px solid black;
+                border-right: 1px solid black;
+                */
+            }
+            
+            .item:hover {
+                cursor: pointer;
+            }
+            
+            .item:hover #content {
+                border: none;
+            }
+            
+            .item:active {
+                
+            }
+            
+            /* 버튼들 */
+            .btn-left, .btn-right {
+                border: 1px solid black;
+                border-radius: 2px;
+                width: 50px;
+                height: 50px;
+                margin-bottom: 50px;
+                background-color: white;
+            }
+            
+            .btn-left {
+                margin-left: 50px;
+            }
+            
+            .btn {
+                margin-top: -270px;
+                width: 600px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .btn-left:hover, .btn-right:hover {
+                cursor: pointer;
+                background-color: lavender;
+                color: black;
+            }
+            
+            .btn-right {
+                margin-left: 400px;
+            }
+            
+            .black {
+                text-decoration: none;
+                color: black;
+            }
+            .mySlides{
+                padding-top: 270px;
+                padding-bottom: 270px;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="background-image: url(Image/movie_image/film.jpg); background-repeat: no-repeat; background-size: 100em 85em">
+            <div class="mySlides">
+                <div class="container">
+                    <div class="item">
+                        <table>
+                            <tr>
+                                <td >
+                                    <img src="Image/movie_image/weatheringwithyou.jpg" class="img">
+                                </td>
+                                <td id="content">
+                                    <p>
+                                        날씨의 아이 <br><br> 
+                                    </p>
+                                    <hr>
+                                    <br>
+                                    <p>
+                                        신카이 마코토
+                                    </p>
+                                    <br><hr><br><br>
+                                    <p>
+                                        “이제 비는 그치고, 우리의 세상이 빛나기 시작할 거야”<br>
+                                        비가 그치지 않던 어느 여름날,<br>
+                                        가출 소년 ‘호다카’는 수상한 잡지사에 취직하게 되고
+                                        비밀스러운 소녀 ‘히나’를 우연히 만난다.
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="item">
+                        <table>
+                            <tr>
+                                <td >
+                                    <img src="Image/movie_image/coco.jpg" class="img">
+                                </td>
+                                <td id="content">
+                                    <p>
+                                        코코 <br><br> 
+                                    </p>
+                                    <hr>
+                                    <br>
+                                    <p>
+                                        리 언크리치
+                                    </p>
+                                    <br><hr><br><br>
+                                    <p>
+                                        뮤지션을 꿈꾸는 소년 미구엘은 전설적인 가수 에르네스토의 기타에 손을 댔다 ‘죽은 자들의 세상’에 들어가게 된다. 
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                     <div class="item">
+                        <table>
+                            <tr>
+                                <td >
+                                    <img src="Image/movie_image/dragon.jpg" class="img">
+                                </td>
+                                <td id="content">
+                                    <p>
+                                        드래곤 길들이기 <br><br> 
+                                    </p>
+                                    <hr>
+                                    <br>
+                                    <p>
+                                        딘 데블로이스
+                                    </p>
+                                    <br><hr><br><br>
+                                    <p>
+                                        바이킹 족장의 아들 ‘히컵’은 드래곤 사냥에 소질 없는 마을의 사고뭉치. 어느날 그는 부상 당한 드래곤 ‘투슬리스’를 구하게 되고, 아무도 몰래 그를 돌본다.
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                     <div class="item">
+                        <table>
+                            <tr>
+                                <td >
+                                    <img src="Image/movie_image/frozen.jpg" class="img">
+                                </td>
+                                <td id="content">
+                                    <p>
+                                        겨울왕국 <br><br> 
+                                    </p>
+                                    <hr>
+                                    <br>
+                                    <p>
+                                        크리스 벅, 제니퍼 리
+                                    </p>
+                                    <br><hr><br><br>
+                                    <p>
+                                        서로가 최고의 친구였던 자매 ‘엘사’와 ‘안나’. 하지만 언니 ‘엘사’에게는 하나뿐인 동생에게조차 말 못할 비밀이 있다. 모든 것을 얼려버리는 신비로운 힘이 바로 그것.
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="mySlides">
+                <div class="container">
+                    <div class="item">
+                        <table>
+                            <tr>
+                                <td >
+                                    <img src="Image/movie_image/sea.jpg" class="img">
+                                </td>
+                                <td id="content">
+                                    <p>
+                                        아틀란티스 <br><br> 
+                                    </p>
+                                    <hr>
+                                    <br>
+                                    <p>
+                                        게리 트러스데일
+                                    </p>
+                                    <br><hr><br><br>
+                                    <p>
+                                        갑부의 후원으로 탐험대를 꾸린 마일로는 요란한 모험 끝에 신비의 땅 아틀란티스를 발견한다.
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                     <div class="item">
+                        <table>
+                            <tr>
+                                <td >
+                                    <img src="Image/movie_image/sommer.jpg" class="img">
+                                </td>
+                                <td id="content">
+                                    <p>
+                                        썸머워즈 <br><br> 
+                                    </p>
+                                    <hr>
+                                    <br>
+                                    <p>
+                                        호소다 마모루
+                                    </p>
+                                    <br><hr><br><br>
+                                    <p>
+                                         ‘고이소 겐지’ 17살, 그리고 27명의 대가족은 인류의 운명을 걸어 일생일대의 여름 전쟁에 나선다! 
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="item">
+                        <table>
+                            <tr>
+                                <td >
+                                    <img src="Image/movie_image/wargame.jpg" class="img">
+                                </td>
+                                <td id="content">
+                                    <p>
+                                        디지몬: 우리들의 워 게임 <br><br> 
+                                    </p>
+                                    <hr>
+                                    <br>
+                                    <p>
+                                        호소다 마모루
+                                    </p>
+                                    <br><hr><br><br>
+                                    <p>
+                                        인터넷 상에는 전 세계의 디지털 데이터를 먹고 성장하는 흉악한 디지몬 쿠라몬이 탄생한다. 쿠라몬은 디아블로몬으로 진화해 지구를 멸망시킬 수 있을 정도의 파급력을 지닌 핵미사일을 발사시키는데…
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="item">
+                        <table>
+                            <tr>
+                                <td >
+                                    <img src="Image/movie_image/time.jpg" class="img">
+                                </td>
+                                <td id="content">
+                                    <p>
+                                        시간을 달리는 소녀 <br><br> 
+                                    </p>
+                                    <hr>
+                                    <br>
+                                    <p>
+                                        호소다 마모루
+                                    </p>
+                                    <br><hr><br><br>
+                                    <p> 
+                                        제가 당할 뻔한 사고를 대신 고스케가 당하는 불상사까지… 타임리프로 사람의 마음을 내 멋대로 바꾼 벌을 받고 있나 봐요. 전 이제 어떡하면 좋을까요?
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="mySlides">
+                <div class="container">
+                     <div class="item">
+                        <table>
+                            <tr>
+                                <td >
+                                    <img src="Image/movie_image/guardians.jpg" class="img">
+                                </td>
+                                <td id="content">
+                                    <p>
+                                        가디언즈 <br><br> 
+                                    </p>
+                                    <hr>
+                                    <br>
+                                    <p>
+                                        피터 램지
+                                    </p>
+                                    <br><hr><br><br>
+                                    <p>
+                                        전세계 모든 아이들의 꿈과 희망, 상상력을 지켜주는 이들은 ‘가디언즈’라 불린다.
+
+                                        하지만 두려움을 심어주는 악몽의 신 ‘피치’가 깨어나자
+                                        이들은 모든 것을 잃을 최대의 위기를 맞게 된다.
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="btn">
+            <button class="btn-left" onclick="plusDivs(-1)">&#10094;</button>
+            <button class="btn-right" onclick="plusDivs(1)">&#10095;</button>
+        </div>
+        
+        <script>
+            var slideIndex = 1;
+            showDivs(slideIndex);
+
+            function plusDivs(n) {
+              showDivs(slideIndex += n);
+            }
+
+            function showDivs(n) {
+              var i;
+              var x = document.getElementsByClassName("mySlides");
+              if (n > x.length) {slideIndex = 1}
+              if (n < 1) {slideIndex = x.length}
+              for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+              }
+              x[slideIndex-1].style.display = "block";  
+            }
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,324 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            
+            /* 이건 플렉스 안에 있는 사진 */
+            .img {
+                width: 300px;
+                height: 400px;
+                display: inline;
+            }
+            
+            /* 플렉스 */
+            .container {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+                align-items: center;
+                align-content: center;
+            }
+            
+            /* 아이템 크기 플렉스 설정들 */
+            .container > div {
+                width: 600px;
+                flex-grow: 0; /* 창 크기에 따라 아이템 확대 보통은 0이 false 1이 true라고 생각해도 된다. */
+                flex-shrink: 1; /*  */
+                flex-basis: auto; /* 아이템 크기 */
+            }
+            
+            .item {
+                border-radius: 10px;
+                /*border-right: 1px solid black;*/
+                background-color: white;
+                margin-bottom: 50px;
+                margin-top: 50px;
+                box-shadow: 10px 10px 3px 3px LIGHTSTEELBLUE;
+            }
+            
+            .item > p {
+
+            }
+            
+            /* 옆에 내용 */
+            #content, .score {
+                padding-left: 20px;
+                padding-right: 20px;
+                /*border-top: 1px solid black;
+                border-bottom: 1px solid black;
+                border-right: 1px solid black;
+                */
+            }
+            
+            .item:hover {
+                cursor: pointer;
+            }
+            
+            .item:hover #content {
+                border: none;
+                display: none;
+            }
+            
+            .item:hover .score {
+                display: block;
+            }
+            
+            .item:active {
+                
+            }
+            
+            /* 버튼들 */
+            .btn-left, .btn-right {
+                border: 1px solid black;
+                border-radius: 2px;
+                width: 50px;
+                height: 50px;
+                margin-bottom: 50px;
+                background-color: white;
+            }
+            
+            .btn-left {
+            }
+            
+            .btn {
+                width: 600px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .btn-left:hover, .btn-right:hover {
+                cursor: pointer;
+                background-color: lavender;
+                color: black;
+            }
+            
+            .btn-right {
+                margin-left: 450px;
+            }
+            
+            .black {
+                text-decoration: none;
+                color: black;
+            }
+            
+            .score {
+                display: none;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="mySlides">
+            <div class="container">
+                <div class="item">
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="Image/soulmate.jpg" class="img">
+                            </td>
+                            <td id="content">
+                                <p>
+                                    공병호의 소울메이트 <br><br> 
+                                </p>
+                                <hr>
+                                <br>
+                                <p>
+                                    공병호 저 / 임현우 그림
+                                </p>
+                                <br><hr><br><br>
+                                <p>
+                                    불확실한 미래에 대한 두려움과 고민으로 힘겨워하는 젊은이들과 피가 되고 살이 되는 조언을 나누면서 그들 안에 숨겨진 보석을 함께 찾고자 시도하고 있는 책이다.
+                                </p>
+                            </td>
+                            <td class="score">
+                                <br>
+                                <br>
+                                <p>
+                                    내용 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    문체 :   
+                                    <i class="fa fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    편집 / 디자인 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    기승전결 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    독창성 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="item">
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="Image/money_study.jpg" class="img">
+                            </td>
+                            <td id="content">
+                                <p>
+                                    돈 공부는 처음이라 <br><br> 
+                                </p>
+                                <hr>
+                                <br>
+                                <p>
+                                    김종봉, 제갈현열
+                                </p>
+                                <br><hr><br><br>
+                                <p>
+                                    “500만 원이 있다면, 이번 생은 아직 틀리지 않았다”
+                                    누구나 따라 할 수 있는 4단계 완성 돈이 모이는 습관
+
+                                    단돈 500만 원으로 시작했지만 이제는 투자 수익만으로 한 달에 1억 원을 버는 투자의 대가 김종봉(JB)의 경험을 베스트셀러 저자 제갈현열의 언어로 담아냈다.
+                                </p>
+                            </td>
+                            <td class="score">
+                                <br>
+                                <br>
+                                <p>
+                                    내용 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    문체 :   
+                                    <i class="fa fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    편집 / 디자인 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    기승전결 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    독창성 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="btn">
+            <button class="btn-left" onclick="plusDivs(-1)">&#10094;</button>
+            <button class="btn-right" onclick="plusDivs(1)">&#10095;</button>
+        </div>
+        <script>
+            var slideIndex = 1;
+            showDivs(slideIndex);
+
+            function plusDivs(n) {
+              showDivs(slideIndex += n);
+            }
+
+            function showDivs(n) {
+              var i;
+              var x = document.getElementsByClassName("mySlides");
+              if (n > x.length) {slideIndex = 1}
+              if (n < 1) {slideIndex = x.length}
+              for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+              }
+              x[slideIndex-1].style.display = "block";  
+            }
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

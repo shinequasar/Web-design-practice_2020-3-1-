@@ -1,0 +1,480 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            
+            /* 이건 플렉스 안에 있는 사진 */
+            .img {
+                width: 300px;
+                height: 400px;
+                display: inline;
+            }
+            
+            /* 플렉스 */
+            .container {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+                align-items: center;
+                align-content: center;
+            }
+            
+            /* 아이템 크기 플렉스 설정들 */
+            .container > div {
+                width: 600px;
+                flex-grow: 0; /* 창 크기에 따라 아이템 확대 보통은 0이 false 1이 true라고 생각해도 된다. */
+                flex-shrink: 1; /*  */
+                flex-basis: auto; /* 아이템 크기 */
+            }
+            
+            .item {
+                border-radius: 10px;
+                /*border-right: 1px solid black;*/
+                background-color: white;
+                margin-bottom: 50px;
+                margin-top: 50px;
+                box-shadow: 10px 10px 3px 3px LIGHTSTEELBLUE;
+            }
+            
+            .item > p {
+
+            }
+            
+            /* 옆에 내용 */
+            #content, .score {
+                padding-left: 20px;
+                padding-right: 20px;
+                /*border-top: 1px solid black;
+                border-bottom: 1px solid black;
+                border-right: 1px solid black;
+                */
+            }
+            
+            .item:hover {
+                cursor: pointer;
+            }
+            
+            .item:hover #content {
+                border: none;
+                display: none;
+            }
+            
+            .item:hover .score {
+                display: block;
+            }
+            
+            .item:active {
+                
+            }
+            
+            /* 버튼들 */
+            .btn-left, .btn-right {
+                border: 1px solid black;
+                border-radius: 2px;
+                width: 50px;
+                height: 50px;
+                margin-bottom: 50px;
+                background-color: white;
+            }
+            
+            .btn-left {
+            }
+            
+            .btn {
+                width: 600px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .btn-left:hover, .btn-right:hover {
+                cursor: pointer;
+                background-color: lavender;
+                color: black;
+            }
+            
+            .btn-right {
+                margin-left: 450px;
+            }
+            
+            .black {
+                text-decoration: none;
+                color: black;
+            }
+            
+            .score {
+                display: none;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="mySlides">
+            <div class="container">
+                <div class="item">
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="Image/tea.jpg" class="img">
+                            </td>
+                            <td id="content">
+                                <p>
+                                    홍차의 나날들 <br><br> 
+                                </p>
+                                <hr>
+                                <br>
+                                <p>
+                                    박서영
+                                </p>
+                                <br><hr><br><br>
+                                <p>
+                                    스트레이트 티, 얼그레이, 로얄 밀크티 등 한 번쯤은 마셔보았지만 아직은 낯선 홍차. 하지만 조금만 정성 들여 마신다면 커피보다 매력적이고 와인보다 섬세한 맛을 느낄 수 있다.
+                                </p>
+                            </td>
+                            <td class="score">
+                                <br>
+                                <br>
+                                <p>
+                                    내용 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    문체 :   
+                                    <i class="fa fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    편집 / 디자인 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    기승전결 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    독창성 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="item">
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="Image/drama.jpg" class="img">
+                            </td>
+                            <td id="content">
+                                <p>
+                                    미드 잡학사전 <br><br> 
+                                </p>
+                                <hr>
+                                <br>
+                                <p>
+                                    박수진
+                                </p>
+                                <br><hr><br><br>
+                                <p>
+                                    미국 드라마 17편에서 모은 유용한 영어표현과 문화 상식, 미드와 관련된 다채로운 읽을거리를 담은 책. 이 책은 미드를 보며 한번쯤 생기는 의문점을 명쾌하게 해결해준다.
+                                </p>
+                            </td>
+                            <td class="score">
+                                <br>
+                                <br>
+                                <p>
+                                    내용 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    문체 :   
+                                    <i class="fa fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    편집 / 디자인 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    기승전결 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    독창성 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="item">
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="Image/monster.jpg" class="img">
+                            </td>
+                            <td id="content">
+                                <p>
+                                    괴물의 심연 <br><br> 
+                                </p>
+                                <hr>
+                                <br>
+                                <p>
+                                    제임스 팰런
+                                </p>
+                                <br><hr><br><br>
+                                <p>
+                                    제임스 팰런James Fallon은 <br>
+                                    어느 날 뇌 스캔 사진들을 연구하다가 우연히 사이코패스의 특징이 명백하게 드러나는 한 장의 사진을 발견한다. 그리고 무심코 누구의 사진인지 살펴보자, 그건 놀랍게도 자기 자신의 사진이었다!
+                                </p>
+                            </td>
+                            <td class="score">
+                                <br>
+                                <br>
+                                <p>
+                                    내용 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    문체 :   
+                                    <i class="fa fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    편집 / 디자인 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    기승전결 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    독창성 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="item">
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="Image/brave.jpg" class="img">
+                            </td>
+                            <td id="content">
+                                <p>
+                                    미움받을 용기 <br><br> 
+                                </p>
+                                <hr>
+                                <br>
+                                <p>
+                                    기시미 이로, 고가 후미타케
+                                </p>
+                                <br><hr><br><br>
+                                <p>
+                                    우리는 모두 변화를 원한다. 지금보다 더 자유로운 삶, 지금보다 더 행복한 삶, 지금보다 더 성공적인 삶. 하지만 우리는 쉽게 핑계를 대고, 쉽게 포기한다. 지금 나의 인생을 되돌아보자. 
+                                </p>
+                            </td>
+                            <td class="score">
+                                <br>
+                                <br>
+                                <p>
+                                    내용 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    문체 :   
+                                    <i class="fa fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    편집 / 디자인 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    기승전결 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    독창성 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="btn">
+            <button class="btn-left" onclick="plusDivs(-1)">&#10094;</button>
+            <button class="btn-right" onclick="plusDivs(1)">&#10095;</button>
+        </div>
+        <script>
+            var slideIndex = 1;
+            showDivs(slideIndex);
+
+            function plusDivs(n) {
+              showDivs(slideIndex += n);
+            }
+
+            function showDivs(n) {
+              var i;
+              var x = document.getElementsByClassName("mySlides");
+              if (n > x.length) {slideIndex = 1}
+              if (n < 1) {slideIndex = x.length}
+              for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+              }
+              x[slideIndex-1].style.display = "block";  
+            }
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

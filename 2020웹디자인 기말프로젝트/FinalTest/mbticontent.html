@@ -1,0 +1,427 @@
+<!doctype html>
+<html>
+    <head>
+        <title>
+            나만 친구 없어 &#91; MBTI &#93;
+        </title>
+        <meta charset="utf-8">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="css/default.css">
+        <link rel="stylesheet" href="css/mbticss.css">
+        <link href="https://fonts.googleapis.com/css2?family=Gaegu&family=Noto+Sans+KR:wght@400&family=Noto+Serif+KR:wght@600&display=swap" rel="stylesheet">
+        <style>
+        .show-mbti {
+                border-top: 2px solid black;
+                height: 400px;
+            }
+            /*다양한 mbti유형들 코너에 필요한 css*/
+          .container_mbti{
+                width: 100%;
+                height: 100%;
+                margin: 0 auto; /* 위쪽아래쪽은 마진 0, 좌우는 auto*/
+                padding: 29px;
+                padding-top: 2em;
+                position: absolute;
+                          
+            }
+            .heading{
+                font-size: 3em;
+                font-weight: 500;
+                text-align: center;
+                padding: 0;
+                font-family: 'Gaegu', cursive;
+            }
+            .gallery{
+                display: flex;
+                flex-wrap: wrap;
+                
+            }
+            .gallery-item{
+                margin: 7px;
+                box-shadow: 0.3em 0.4em 0.4em rgba(0,0,0,0.4);  /*em은 상대적인 크기라 사용*/
+                overflow: hidden; /*넘치는건 안보이게함*/
+                width: 8.5em;
+                height: 12em;
+                object-fit: cover;
+            }
+            .gallery-image{
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;  /*어떤 영역에 보일 이미지의 가로세로가 영역과 같지 않아도 일부분만 보이게 해 이미지를 왜곡하지 않는 것*/
+                transition: transform 400ms ease-out; 
+            }
+            .gallery-image:hover{
+                transform: scale(1.15);
+            }  
+            .result {
+                position: absolute;
+                top: 45em;
+                left: 1%;
+                margin-top: 7em;
+                margin-left: auto;
+                margin-right: auto;
+                width: 98%;
+                height: 100%;
+                
+            }
+            .result2 {
+                position: absolute;
+                top: 220em;
+                left: 1%;
+                margin-top: 7em;
+                margin-left: 1.5em;
+                margin-right: auto;
+                width: 98%;
+                height: 100%;
+            }
+            .intro_img{
+                margin-top:20px;
+                margin-bottom: 20px;
+            }
+            #line{
+                border-bottom: 2px solid black;
+                padding-top: 2em;
+                padding-bottom: 30px; 
+            }
+            .font{
+               font-family: 'Noto Serif KR', serif;
+                margin-right: 25px;
+            }
+            .font2{
+                font-family: 'Gaegu', cursive;
+            }
+            .tablecolor{
+                margin-left: auto;
+                margin-right: auto;
+                background-color: antiquewhite;
+                padding: 20px 50px 40px 20px;
+            }
+            .btn {
+                text-align: center;
+                display: block;
+                text-decoration: none;
+                color: white;
+                margin-top: 30px;
+                padding: 10px;
+                width: 130px;
+                border-radius: 4px;
+                margin-left: auto;
+                margin-right: auto;
+                background-color: black;
+            }
+            
+            .btn:hover {
+                color: black;
+                background-color: coral;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="nav"  style="background-color: antiquewhite; padding-bottom: 30px">
+            <ul class="nav-container">
+                <li class="nav-item">
+                    <a class="hiper" href="Main.html">
+                        <i class="hiper2 hiper fa fa-home"></i>
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="hiper" href="bookcontent.html">
+                        <i class="hiper2 hiper fa fa-book"></i>
+                        Book
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="hiper" href="moviecontent.html">
+                        <i class="hiper2 hiper fa fa-ticket"></i>
+                        Movie
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="hiper" href="gamecontent.html">
+                        <i class="hiper2 hiper fa fa-gamepad"></i>
+                        Game
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="hiper" href="mbticontent.html">
+                        <i class="hiper2 hiper fa fa-clipboard"></i>
+                        MBTI
+                    </a>
+                </li>
+                <li class="nav-item info">
+                    <a class="hiper" href="info.html">
+                        <i class="hiper2 hiper fa fa-users"></i>
+                        My Page
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="header">
+            <h1>
+                MBTI
+            </h1>
+            <p  class="font2" style="font-size: 1.4em">
+                너는 과연 16가지 유형 중 뭘까?
+            </p>
+        </div>
+        <div class="best" >
+            <h1 class="font" style="font-size: 3em">
+                MBTI 소개
+            </h1>
+            <div class="show-mbti">
+                
+                
+        <table style="background-color: antiquewhite;">
+           <tr style="solid border: 1px">
+             <th><img src="Image/mbti_intro.png" class="intro_img" style="padding-left: 30px"></th>
+               <th>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</th>
+               <th>
+                   <h1 class="font">" MBTI 란? "</h1>
+                   <p class="font"><span style="font-size: 32px; color:green">MBTI</span>( Myers-Briggs Type Indicator )는 C.G.Jung의 심리유형론을 근거로 하여 Katharine Cook Briggs와 Isabel Briggs Myers가 보다 쉽고 일상생활에 유용하게 활용할 수 있도록 고안한 자기보고식 성격유형지표이다.<br>MBTI는 인식과 판단에 대한 융의 심리적 기능이론, 그리고 인식과 판단의 향방을 결정짓는 융의 태도 이론을 바탕으로 하여 제작되었다. 또한 개인이 쉽게 응답할 수 있는 자기보고(self report) 문항을 통해 인식하고 판단할 때의 각자 선호하는 경향을 찾고, <i>이러한 선호경향들이 하나하나 또는 '여러 개가 합쳐져서 인간의 행동에 어떠한 영향을 미치는가를 파악'</i> 하여 실생활에 응용할 수 있도록 제작된 심리검사이다.</p>
+                   <a href="https://www.16personalities.com/ko" class="btn" target="_blank">검사받기</a>
+               </th>
+           </tr><br><br>             
+        </table>        
+                
+                
+            </div>
+        </div>
+        <div class="todo">
+        
+        </div>
+        <div class="result">
+        
+            <h1 id="line"  class="font" style="font-size: 3em">
+                MBTI 유형들
+            </h1>
+                <!--mbti 유형 이미지 사진들-->
+                <br>
+            <div class="container_mbti">
+                    <br><h1 class="heading">다양한 MBTI 유형들</h1><br>
+                <table  class="tablecolor">
+                    <tr>
+                        <th class="imgsize"><div class="gallery-item" >
+                            <a href="Image/MBTI_image/enfj.JPG" target="type">
+                            <img class="gallery-image" src="Image/MBTI_image/enfj.JPG" >
+                            </a>
+                        </div></th>
+                        <th class="imgsize"><div class="gallery-item">
+                            <a href="Image/MBTI_image/enfp.JPG" target="type">
+                            <img class="gallery-image" src="Image/MBTI_image/enfp.JPG" >
+                            </a>
+                        </div></th>
+                        <th> <div class="gallery-item">
+                            <a href="Image/MBTI_image/infp.JPG" target="type">
+                            <img class="gallery-image" src="Image/MBTI_image/infp.JPG" >
+                            </a>
+                        </div></th>
+                        <th><div class="gallery-item">
+                            <a href="Image/MBTI_image/infj.JPG" target="type">
+                            <img class="gallery-image" src="Image/MBTI_image/infj.JPG">
+                            </a>
+                        </div></th>
+                        <th><div class="gallery-item">
+                            <a href="Image/MBTI_image/intj.JPG" target="type">
+                            <img class="gallery-image" src="Image/MBTI_image/intj.JPG" >
+                            </a>
+                        </div></th>
+                        <th><div class="gallery-item">
+                            <a href="Image/MBTI_image/intp.JPG" target="type">
+                            <img class="gallery-image" src="Image/MBTI_image/intp.JPG">
+                            </a>
+                        </div></th>
+                        <th><div class="gallery-item">
+                            <a href="Image/MBTI_image/entj.JPG" target="type">
+                            <img class="gallery-image" src="Image/MBTI_image/entj.JPG">
+                            </a>
+                        </div></th>
+                        <th><div class="gallery-item">
+                            <a href="Image/MBTI_image/entp.JPG" target="type">
+                            <img class="gallery-image" src="Image/MBTI_image/entp.JPG">
+                            </a>
+                        </div></th>
+                    </tr>
+                    <tr>
+                        <th><div class="gallery-item">
+                            <a href="Image/MBTI_image/istj.JPG" target="type">
+                            <img class="gallery-image" src="Image/MBTI_image/istj.JPG">
+                            </a>
+                        </div></th>
+                        <th><div class="gallery-item">
+                            <a href="Image/MBTI_image/isfj.JPG" target="type">
+                            <img class="gallery-image" src="Image/MBTI_image/isfj.JPG">
+                            </a>
+                        </div></th>
+                        <th><div class="gallery-item">
+                            <a href="Image/MBTI_image/estj.JPG" target="type">
+                            <img class="gallery-image" src="Image/MBTI_image/estj.JPG">
+                            </a>
+                        </div></th>
+                        <th><div class="gallery-item">
+                            <a href="Image/MBTI_image/esfj.JPG" target="type">
+                            <img class="gallery-image" src="Image/MBTI_image/esfj.JPG">
+                            </a>
+                        </div></th>
+                        <th><div class="gallery-item">
+                            <a href="Image/MBTI_image/istp.JPG" target="type">
+                            <img class="gallery-image" src="Image/MBTI_image/istp.JPG">
+                            </a>
+                        </div></th>
+                        <th><div class="gallery-item">
+                            <a href="Image/MBTI_image/isfp.JPG" target="type">
+                            <img class="gallery-image" src="Image/MBTI_image/isfp.JPG">
+                            </a>
+                        </div></th>
+                        <th><div class="gallery-item">
+                            <a href="Image/MBTI_image/estp.JPG" target="type">
+                            <img class="gallery-image" src="Image/MBTI_image/estp.JPG">
+                            </a>
+                        </div></th>
+                        <th><div class="gallery-item">
+                            <a href="Image/MBTI_image/esfp.JPG" target="type">
+                            <img class="gallery-image" src="Image/MBTI_image/esfp.JPG">
+                            </a>
+                        </div></th>
+                    </tr>
+                </table>
+                <!-- 여기 고치기 -->
+                <div class="second-display w3-center" style="padding-top: 30px; padding-bottom: 60px" >
+                    <iframe src="Image/MBTI_image/enfp.JPG" style="border: none" name="type" alt="none" width="290px" height="490px" scrolling="no"></iframe><p class="font2">크게보기</p>
+                </div>
+                    
+                    
+                    <!-- MBTI 분포차트 -->
+                    <div class="w3-content w3-container" id="about" style="padding-top:600px" >
+                      <h2 class="w3-center font2">과연 전세계 MBTI별 분포는?</h2>
+                      <p class="w3-center"><em>- MBTI 분포차트 - </em></p><br>
+                      <p>과연 나와 비슷한 사람들은 얼마나 존재할까? 세상의 MBTI 타입 존재별 분포도를 간단한 차트를 통해 알아보자. 나의 MBTI와 같은 사람들의 분포는 얼마나 될까? 그리고 내 주변 친구들이나 가족들의 타입을 얼마나 존재할까? 차트를 통해 알아보는 전세계 MBTI별 분포! </p><br>
+                      <p class="w3-wide"><i class="fa fa-user-circle"></i> ENTP</p>
+                      <div class="w3-dark-grey">
+                        <div class="w3-container w3-padding-small w3-red w3-center" style="width:25%">5%</div>
+                      </div>
+                      <p class="w3-wide"><i class="fa fa-user-circle"></i> INTP</p>
+                      <div class="w3-dark-grey">
+                        <div class="w3-container w3-padding-small w3-blue w3-center" style="width:25%">5%</div>
+                      </div>
+                      <p class="w3-wide"><i class="fa fa-user-circle"></i> INFP</p>
+                      <div class="w3-dark-grey">
+                        <div class="w3-container w3-padding-small w3-green w3-center" style="width:20%">4%</div>
+                      </div>  
+                      <p class="w3-wide"><i class="fa fa-user-circle"></i> ESTJ</p>
+                      <div class="w3-dark-grey">
+                        <div class="w3-container w3-padding-small w3-pink w3-center" style="width:20%">4%</div>
+                      </div> 
+                      <p class="w3-wide"><i class="fa fa-user-circle"></i> INTJ</p>
+                      <div class="w3-dark-grey">
+                        <div class="w3-container w3-padding-small w3-orange w3-center" style="width:30%">6%</div>
+                      </div>  
+                      <p class="w3-wide"><i class="fa fa-user-circle"></i> INFJ</p>
+                      <div class="w3-dark-grey">
+                        <div class="w3-container w3-padding-small w3-purple w3-center" style="width:20%">4%</div>
+                      </div>  
+                      <p class="w3-wide"><i class="fa fa-user-circle"></i> ENTJ</p>
+                      <div class="w3-dark-grey">
+                        <div class="w3-container w3-padding-small w3-lime w3-center" style="width:30%">6%</div>
+                      </div>  
+                      <p class="w3-wide"><i class="fa fa-user-circle"></i> ISTJ</p>
+                      <div class="w3-dark-grey">
+                        <div class="w3-container w3-padding-small w3-indigo w3-center" style="width:60%">12%</div>
+                      </div>
+                      <p class="w3-wide"><i class="fa fa-user-circle"></i> ISFJ</p>
+                      <div class="w3-dark-grey">
+                        <div class="w3-container w3-padding-small w3-teal w3-center" style="width:40%">8%</div>
+                      </div>  
+                      <p class="w3-wide"><i class="fa fa-user-circle"></i> ISTP</p>
+                      <div class="w3-dark-grey">
+                        <div class="w3-container w3-padding-small w3-brown w3-center" style="width:25%">5%</div>
+                      </div>    
+                      <p class="w3-wide"><i class="fa fa-user-circle"></i> ISFP</p>
+                      <div class="w3-dark-grey">
+                        <div class="w3-container w3-padding-small w3-green w3-center" style="width:20%">4%</div>
+                      </div>    
+                     <p class="w3-wide"><i class="fa fa-user-circle"></i> ESTP</p>
+                      <div class="w3-dark-grey">
+                        <div class="w3-container w3-padding-small w3-orange w3-center" style="width:15%">3%</div>
+                      </div>     
+                      <p class="w3-wide"><i class="fa fa-user-circle"></i> ESFP</p>
+                      <div class="w3-dark-grey">
+                        <div class="w3-container w3-padding-small w3-yellow w3-center" style="width:25%">5%</div>
+                      </div>    
+                      <p class="w3-wide"><i class="fa fa-user-circle"></i> ENFP</p>
+                      <div class="w3-dark-grey">
+                        <div class="w3-container w3-padding-small w3-light-blue w3-center" style="width:40%">8%</div>
+                      </div>  
+                      <p class="w3-wide"><i class="fa fa-user-circle"></i> ESFJ</p>
+                      <div class="w3-dark-grey">
+                        <div class="w3-container w3-padding-small w3-red w3-center" style="width:40%">8%</div>
+                      </div>    
+                      <p class="w3-wide"><i class="fa fa-user-circle"></i> ENFJ</p>
+                      <div class="w3-dark-grey">
+                        <div class="w3-container w3-padding-small w3-amber w3-center" style="width:20%">4%</div>
+                      </div>    
+                    </div>
+                </div> 
+            </div>
+       
+        <div class="result2">
+             <h1 id="line"  class="font" style="font-size: 3em">
+                관련 패러디 / 밈
+            </h1>
+         <div id="content2">
+        <h1 class="w3-center font2" style="padding-top: 50px">MBTI 관련 패더디들과 밈 모음</h1>
+        <div class="row" style="background-color: lightgray">
+            <div class="col">
+                <img src="image/MBTI_image/1.jpg">
+                <img src="image/MBTI_image/5.png">
+                <img src="image/MBTI_image/3.jpg">
+                <img src="image/MBTI_image/7.jpg">
+                <img src="image/MBTI_image/15.png">
+                
+            </div>
+            <div class="col">
+                <img src="image/MBTI_image/6.jpg">
+                <img src="image/MBTI_image/4.jpg">
+                <img src="image/MBTI_image/8.jpg">
+                <img src="image/MBTI_image/9.jpg">
+                
+            </div>
+            <div class="col">
+                <img src="image/MBTI_image/2.jpg">
+                <img src="image/MBTI_image/10.png">
+                <img src="image/MBTI_image/11.jpg">
+                <img src="image/MBTI_image/12.jpg">
+            </div>
+            <div class="col">
+                <img src="image/MBTI_image/16.png">
+                <img src="image/MBTI_image/13.jpg">
+                <img src="image/MBTI_image/14.png">
+                
+            </div>
+        </div>
+        </div>
+        </div>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

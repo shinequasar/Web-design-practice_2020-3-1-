@@ -1,0 +1,801 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            
+            /* 이건 플렉스 안에 있는 사진 */
+            .img {
+                width: 300px;
+                height: 400px;
+                display: inline;
+            }
+            
+            /* 플렉스 */
+            .container {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+                align-items: center;
+                align-content: center;
+            }
+            
+            /* 아이템 크기 플렉스 설정들 */
+            .container > div {
+                width: 600px;
+                flex-grow: 0; /* 창 크기에 따라 아이템 확대 보통은 0이 false 1이 true라고 생각해도 된다. */
+                flex-shrink: 1; /*  */
+                flex-basis: auto; /* 아이템 크기 */
+            }
+            
+            .item {
+                border-radius: 10px;
+                /*border-right: 1px solid black;*/
+                background-color: white;
+                margin-bottom: 50px;
+                margin-top: 50px;
+                box-shadow: 10px 10px 3px 3px LIGHTSTEELBLUE;
+            }
+            
+            .item > p {
+
+            }
+            
+            /* 옆에 내용 */
+            #content, .score {
+                padding-left: 20px;
+                padding-right: 20px;
+                /*border-top: 1px solid black;
+                border-bottom: 1px solid black;
+                border-right: 1px solid black;
+                */
+            }
+            
+            .item:hover {
+                cursor: pointer;
+            }
+            
+            .item:hover #content {
+                border: none;
+                display: none;
+            }
+            
+            .item:hover .score {
+                display: block;
+            }
+            
+            .item:active {
+                
+            }
+            
+            /* 버튼들 */
+            .btn-left, .btn-right {
+                border: 1px solid black;
+                border-radius: 2px;
+                width: 50px;
+                height: 50px;
+                margin-bottom: 50px;
+                background-color: white;
+            }
+            
+            .btn-left {
+            }
+            
+            .btn {
+                width: 600px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .btn-left:hover, .btn-right:hover {
+                cursor: pointer;
+                background-color: lavender;
+                color: black;
+            }
+            
+            .btn-right {
+                margin-left: 450px;
+            }
+            
+            .black {
+                text-decoration: none;
+                color: black;
+            }
+            
+            .score {
+                display: none;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="mySlides">
+            <div class="container">
+                <div class="item">
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="Image/i-see-sound.jpg" class="img">
+                            </td>
+                            <td id="content">
+                                <p>
+                                    소리가 보이는 사람들 <br><br> 
+                                </p>
+                                <hr>
+                                <br>
+                                <p>
+                                    김성훈
+                                </p>
+                                <br><hr><br><br>
+                                <p>
+                                    《소리가 보이는 사람들》은 우리나라에서 처음으로 공감각에 대해 이야기하는 책이다. 뇌과학자인 저자 제이미 워드는 공감각 연구의 세계적 권위자로, 공감각 현상을 뇌과학적으로 설명하며 인간의 감각과 뇌의 활동, 인지심리학과 신경과학에 대한 흥미로운 이야기들을 쉬운 문체로 풀어낸다.
+                                </p>
+                            </td>
+                            <td class="score">
+                                <br>
+                                <br>
+                                <p>
+                                    내용 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    문체 :   
+                                    <i class="fa fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    편집 / 디자인 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    기승전결 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    독창성 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="item">
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="Image/coding.jpg" class="img">
+                            </td>
+                            <td id="content">
+                                <p>
+                                    코딩호러가 들려주는<br>
+                                    진짜 소프트웨어 개발 이야기<br><br> 
+                                </p>
+                                <hr>
+                                <br>
+                                <p>
+                                    제프 앳우드
+                                </p>
+                                <br><hr><br><br>
+                                <p>
+                                    코딩 호러가 다시 돌아왔다! 전작인 『코딩 호러의 이펙티브 프로그래밍』에 이어 이번에도 저자의 프로그래밍을 향한 열정과 거침없는 독설은 소프트웨어 업계 종사자가 본받고 새겨들을 만한 내용으로 가득 차 있다.
+                                </p>
+                            </td>
+                            <td class="score">
+                                <br>
+                                <br>
+                                <p>
+                                    내용 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    문체 :   
+                                    <i class="fa fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    편집 / 디자인 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    기승전결 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    독창성 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="item">
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="Image/monster.jpg" class="img">
+                            </td>
+                            <td id="content">
+                                <p>
+                                    괴물의 심연 <br><br> 
+                                </p>
+                                <hr>
+                                <br>
+                                <p>
+                                    제임스 팰런
+                                </p>
+                                <br><hr><br><br>
+                                <p>
+                                    제임스 팰런James Fallon은 <br>
+                                    어느 날 뇌 스캔 사진들을 연구하다가 우연히 사이코패스의 특징이 명백하게 드러나는 한 장의 사진을 발견한다. 그리고 무심코 누구의 사진인지 살펴보자, 그건 놀랍게도 자기 자신의 사진이었다!
+                                </p>
+                            </td>
+                            <td class="score">
+                                <br>
+                                <br>
+                                <p>
+                                    내용 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    문체 :   
+                                    <i class="fa fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    편집 / 디자인 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    기승전결 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    독창성 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="item">
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="Image/memories.jpg" class="img">
+                            </td>
+                            <td id="content">
+                                <p>
+                                    기억 파단자 <br><br> 
+                                </p>
+                                <hr>
+                                <br>
+                                <p>
+                                    고바야시 야스미
+                                </p>
+                                <br><hr><br><br>
+                                <p>
+                                    어느 날, 낯선 방에서 깨어난 니키치는 머리맡에 놓여 있는 한 권의 노트를 발견, 그 안에서 자신이 단기 기억 상실증에 걸렸다는 청천벽력 같은 사실을 알게 된다. 설상가상으로 그는 타인의 기억을 개조하는 초능력을 가진 살인마와 대면하게 되는데.
+                                </p>
+                            </td>
+                            <td class="score">
+                                <br>
+                                <br>
+                                <p>
+                                    내용 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    문체 :   
+                                    <i class="fa fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    편집 / 디자인 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    기승전결 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    독창성 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="mySlides">
+            <div class="container">
+                <div class="item">
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="Image/perfume.jpg" class="img">
+                            </td>
+                            <td id="content">
+                                <p>
+                                    나는 향수로 글을 쓴다 <br><br> 
+                                </p>
+                                <hr>
+                                <br>
+                                <p>
+                                    장 끌로도 엘레나
+                                </p>
+                                <br><hr><br><br>
+                                <p>
+                                    조향사 장 끌로드 엘레나가 향수와 삶에 대한 자신의 솔직한 생각을 『나는 향수로 글을 쓴다』에 담백하게 담았다. 조향사가 되기까지의 열정과 과정, 자신의 삶을 풍성하게 해준 사람들 그리고 삶의 소소한 즐거움
+                                </p>
+                            </td>
+                            <td class="score">
+                                <br>
+                                <br>
+                                <p>
+                                    내용 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    문체 :   
+                                    <i class="fa fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    편집 / 디자인 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    기승전결 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    독창성 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="item">
+                    <table>
+                        <tr>
+                            <td >
+                                <img src="Image/mana.jpg" class="img">
+                            </td>
+                            <td id="content">
+                                <p>
+                                    마력의 태동 <br><br> 
+                                </p>
+                                <hr>
+                                <br>
+                                <p>
+                                    히가시노 게이고
+                                </p>
+                                <br><hr><br><br>
+                                <p>
+                                    ‘라플라스의 악마’에 착안한 작가는 이 세상에 존재하는 모든 원자의 현재 위치와 운동량을 파악해내는 주인공 ‘라플라스의 마녀’의 활약상을 통해 기발한 구상과 반전의 미스터리를 그려보인다.
+                                </p>
+                            </td>
+                            <td class="score">
+                                <br>
+                                <br>
+                                <p>
+                                    내용 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    문체 :   
+                                    <i class="fa fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    편집 / 디자인 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    기승전결 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    독창성 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="item">
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="Image/witch.jpg" class="img">
+                            </td>
+                            <td id="content">
+                                <p>
+                                    라플라스의 마녀 <br><br> 
+                                </p>
+                                <hr>
+                                <br>
+                                <p>
+                                    히가시노 게이고
+                                </p>
+                                <br><hr><br>
+                                <p>
+                                    이번 소설은 나비에 스토크스 방정식과 라플라스 이론 등 물리학·수리학의 난제들 및 신비로운 뇌의학의 세계, SF적 상상력 그리고 황화수소를 이용한 교묘한 범죄에 얽힌
+                                </p>
+                            </td>
+                            <td class="score">
+                                <br>
+                                <br>
+                                <p>
+                                    내용 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    문체 :   
+                                    <i class="fa fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    편집 / 디자인 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    기승전결 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    독창성 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="item">
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="Image/dream.jpg" class="img">
+                            </td>
+                            <td id="content">
+                                <p>
+                                    예지몽 <br><br> 
+                                </p>
+                                <hr>
+                                <br>
+                                <p>
+                                    히가시노 게이고
+                                </p>
+                                <br><hr><br><br>
+                                <p>
+                                    대학 시절 같은 배드민턴 부 소속으로 활동하며 친하게 지내던 두 사람은 졸업 이후 각자의 삶에 바빠 소원하게 지냈으나 해결하기 어려운 불가사의한 사건을 맡게 된 구사나기가 도움을 청하러 유가와를 찾음으로써
+                                </p>
+                            </td>
+                            <td class="score">
+                                <br>
+                                <br>
+                                <p>
+                                    내용 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    문체 :   
+                                    <i class="fa fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    편집 / 디자인 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    기승전결 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>
+                                    독창성 :   
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="btn">
+            <button class="btn-left" onclick="plusDivs(-1)">&#10094;</button>
+            <button class="btn-right" onclick="plusDivs(1)">&#10095;</button>
+        </div>
+        <script>
+            var slideIndex = 1;
+            showDivs(slideIndex);
+
+            function plusDivs(n) {
+              showDivs(slideIndex += n);
+            }
+
+            function showDivs(n) {
+              var i;
+              var x = document.getElementsByClassName("mySlides");
+              if (n > x.length) {slideIndex = 1}
+              if (n < 1) {slideIndex = x.length}
+              for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+              }
+              x[slideIndex-1].style.display = "block";  
+            }
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

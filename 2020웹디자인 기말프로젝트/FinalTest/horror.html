@@ -1,0 +1,452 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+        <script src="https://code.jquery.com/jquery-latest.js"></script>
+        <style>
+            
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            
+            /* 이건 플렉스 안에 있는 사진 */
+            .img {
+                width: 500px;
+                height: 300px;
+            }
+            
+            #content {
+                width: 500px;
+            }
+            
+            /* 플렉스 */
+            .container {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+                align-items: center;
+                align-content: center;
+            }
+            
+            /* 아이템 크기 플렉스 설정들 */
+            .container > div {
+                width: 502.2px;
+                flex-grow: 0; /* 창 크기에 따라 아이템 확대 보통은 0이 false 1이 true라고 생각해도 된다. */
+                flex-shrink: 1; /*  */
+                flex-basis: auto; /* 아이템 크기 */
+            }
+            
+            .item {
+                border-radius: 10px;
+                height: 600px;
+                /*border-right: 1px solid black;*/
+                background-color: white;
+                margin-bottom: 50px;
+                margin-top: 50px;
+                box-shadow: 10px 10px 3px 3px salmon;
+                
+            }
+            
+            .item > p {
+
+            }
+            
+            /* 옆에 내용 */
+            #content, .score {
+                padding-left: 20px;
+                padding-right: 20px;
+                /*border-top: 1px solid black;
+                border-bottom: 1px solid black;
+                border-right: 1px solid black;
+                */
+            }
+            
+            .item:hover {
+                cursor: pointer;
+            }
+            
+            .item:active {
+                
+            }
+            
+            /* 버튼들 */
+            .btn-left, .btn-right {
+                border: 1px solid black;
+                border-radius: 2px;
+                width: 50px;
+                height: 50px;
+                margin-bottom: 50px;
+                background-color: white;
+            }
+            
+            .btn-left {
+            }
+            
+            .btn {
+                width: 600px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .btn-left:hover, .btn-right:hover {
+                cursor: pointer;
+                background-color: peachpuff;
+                color: black;
+            }
+            
+            .btn-right {
+                margin-left: 450px;
+            }
+            
+            .black {
+                text-decoration: none;
+                color: black;
+            }
+            
+            .score {
+                display: none;
+            }
+            
+            #id01, #id02 {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 900px;
+                transform: translate(-50%, -50%);
+                background-color: white;
+                border: 1px solid black;
+                box-shadow: 0px 0px 10px 1000px rgba(169, 169, 169, 0.5);
+                display: none;
+                z-index: 999;
+            }
+            
+            .upsite {
+                border-bottom: 1px solid black;
+                padding-bottom: 2px;
+            }
+            
+            .close {
+                font-size: 1.2em;
+            }
+            
+            .colose:hover {
+                cursor: pointer;
+            }
+            
+            .under, .box {
+                margin-right: 15px;
+            }
+            
+            .under {
+                margin-left: 395px;
+            }
+            
+            .modal-content {
+                height: 500px;
+                background-color: black;
+                padding: 5px 0px 0px 5px;
+            }
+            
+            .modal-content p {
+                color: white;
+            }
+            
+            .blank {
+                animation: blink-animation 0.8s steps(10, start) infinite alternate;
+                -webkit-animation: blink-animation 0.8s steps(10, start) infinite alternate;
+            }
+            
+            @keyframes blink-animation {
+               from {
+                   visibility: visibility;
+               }
+               to {
+                   visibility: hidden;
+               }
+            }
+            
+            @-webkit-keyframes blink-animation {
+               from {
+                   visibility: visibility;
+               }
+               to {
+                   visibility: hidden;
+               }
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="mySlides">
+            <div class="container">
+                <div class="item" onclick="document.getElementById('id01').style.display='block'">
+                    <table>
+                        <tr>
+                            <td >
+                                <img src="Image/alien.jpg" class="img">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="content">
+                                <br>
+                                <p>
+                                    Alien Isolation <br><br> 
+                                </p>
+                                <hr>
+                                <br>
+                                <p>
+                                    Creative Assembly, Feral Interactive (Mac), Feral Interactive (Linux)
+                                </p>
+                                <br><hr><br>
+                                <p>
+                                    에일리언에서 공포의 진정한 의미를 알아보십시오. 고립, 끊임없는 두려움과 치명적인 위험의 분위기를 배경으로 한 생존 공포.
+                                </p>
+                                <br>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="item" onclick="document.getElementById('id01').style.display='block'">
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="Image/super.jpg" class="img">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="content">
+                                <br>
+                                <p>
+                                    Super Liminal <br><br> 
+                                </p>
+                                <hr>
+                                <br>
+                                <p>
+                                    Pillow Castle
+                                </p>
+                                <br><hr><br>
+                                <p>
+                                     인식이 곧 현실입니다. 몽환적인 1인칭 퍼즐 게임을 통해 초현실적인 꿈속 세상을 탐험하고, 불분명한 입체감과 원근감을 활용해 불가능해 보이는 퍼즐을 완성하세요.
+                                </p>
+                                <br>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="item" onclick="document.getElementById('id01').style.display='block'">
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="Image/garrymod.jpg" class="img">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="content">
+                                <br>
+                                <p>
+                                    Garry's Mod <br><br> 
+                                </p>
+                                <hr>
+                                <br>
+                                <p>
+                                    Facepunch Studios
+                                </p>
+                                <br><hr><br>
+                                <p>
+                                    개리 모드는 물리학 샌드박스다. 어떤 사전 정의된 목표나 목표도 없다. 우리는 너에게 도구를 주고 널 놀게 내버려둔다.
+                                </p>
+                                <br>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="item" onclick="document.getElementById('id01').style.display='block'">
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="Image/detroit.jpg" class="img">
+                            </td>
+                            
+                        </tr>
+                        <tr>
+                            <td id="content">
+                                <br>
+                                <p>
+                                    Detroit Become Human <br><br> 
+                                </p>
+                                <hr>
+                                <br>
+                                <p>
+                                    Quantic Dream
+                                </p>
+                                <br><hr><br>
+                                <p>
+                                    Detroit: Become Human에서는, 여러분을 기계가 인간보다 더 높은 지능을 갖고 있는 근미래로 데려가, 인간과 안드로이드의 운명을 여러분의 손에 쥐어 줍니다.
+                                </p>
+                                <br>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="mySlides">
+            <div class="container">
+                <div class="item" onclick="document.getElementById('id01').style.display='block'">
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="Image/dead.jpg" class="img">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="content">
+                                <br>
+                                <p>
+                                    Dead By Daylight <br><br> 
+                                </p>
+                                <hr>
+                                <br>
+                                <p>
+                                    Behaviour Ineractive Inc.
+                                </p>
+                                <br><hr><br>
+                                <p>
+                                    데드 바이 데이라이트는 한 명의 플레이어가 생존자를 고문하고 죽이려는 잔학한 살인마의 역할을 담당하고, 나머지 네 명의 플레이어는 살인마로부터 도망치려는 생존자로 플레이하는 (4vs1) 공포게임 입니다.
+                                </p>
+                                <br>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div id="id01">
+            <div class="upsite">
+                <p style="display: inline; margin-left: 5px">
+                    C:\WINDOWS\system32\나만 친구 없어 &#91; Game &#93;.exe
+                </p>
+                <span class="under">
+                    __
+                </span>
+                <span class="box far fa-square">
+                </span>
+                <span onclick="document.getElementById('id01').style.display='none'" class="close">
+                    X
+                </span>
+            </div>
+            <div class="modal-content">
+                <p>
+                    Microsoft Windows [Version 10.0.17134.885] <br>
+                    (c) 2018 Microsoft Corporation. All rights reserved.<br>
+                    <br>
+                    C:\Users\유제환, 정소연> 재미 : <span class="fas fa-star"></span><span class="fas fa-star"></span>
+                    <span class="fas fa-star"></span><span class="fas fa-star"></span><span class="fas fa-star-half-alt"></span>
+                    <br>
+                    C:\Users\유제환, 정소연> 가격 : <span class="fas fa-star"></span><span class="fas fa-star"></span>
+                    <span class="fas fa-star"></span><span class="fas fa-star-half-alt"></span><span class="far fa-star"></span>
+                    <br>
+                    C:\Users\유제환, 정소연> 스토리 : <span class="fas fa-star"></span><span class="fas fa-star"></span>
+                    <span class="fas fa-star"></span><span class="fas fa-star"></span><span class="fas fa-star"></span>
+                    <br>
+                    C:\Users\유제환, 정소연> 최적화 : <span class="fas fa-star"></span><span class="fas fa-star"></span>
+                    <span class="fas fa-star"></span><span class="fas fa-star"></span><span class="fas fa-star"></span>
+                    <br>
+                    C:\Users\유제환, 정소연> 사운드 : <span class="fas fa-star"></span><span class="fas fa-star"></span>
+                    <span class="fas fa-star"></span><span class="fas fa-star"></span><span class="fas fa-star"></span>
+                    <br>
+                    C:\Users\유제환, 정소연> <br>
+                    C:\Users\유제환, 정소연> - 한줄평 - <br>
+                    C:\Users\유제환, 정소연> 이 게임은 인생을 돌아보게 만들면서도 재미까지 갖춰져있습니다.<br>
+                    C:\Users\유제환, 정소연> 그래픽 또한 가벼워 낮은 사양의 컴퓨터로도 플레이가 가능합니다.<br>
+                    C:\Users\유제환, 정소연> 자신이 무엇을 향해 나아가는지 고민하는 사람이라면 한번쯤 해보는 걸 추천합니다.
+                    C:\Users\유제환, 정소연> <span class="blank">__</span>
+                </p>
+            </div>
+        </div>
+        <div id="id02">
+            <div class="upsite">
+                <p style="display: inline; margin-left: 5px">
+                    C:\WINDOWS\system32\나만 친구 없어 &#91; Game &#93;.exe
+                </p>
+                <span class="under">
+                    __
+                </span>
+                <span class="box far fa-square">
+                </span>
+                <span onclick="document.getElementById('id02').style.display='none'" class="close">
+                    X
+                </span>
+            </div>
+            <div class="modal-content">
+                <p>
+                    Microsoft Windows [Version 10.0.17134.885] <br>
+                    (c) 2018 Microsoft Corporation. All rights reserved.<br>
+                    <br>
+                    C:\Users\유제환, 정소연> 재미 : <span class="fas fa-star"></span><span class="fas fa-star"></span>
+                    <span class="fas fa-star"></span><span class="fas fa-star-half-alt"></span><span class="far fa-star"></span>
+                    <br>
+                    C:\Users\유제환, 정소연> 가격 : <span class="fas fa-star"></span><span class="fas fa-star-half-alt"></span>
+                    <span class="far fa-star"></span><span class="far fa-star"></span><span class="far fa-star"></span>
+                    <br>
+                    C:\Users\유제환, 정소연> 스토리 : <span class="fas fa-star"></span><span class="fas fa-star"></span>
+                    <span class="fas fa-star"></span><span class="fas fa-star"></span><span class="fas fa-star"></span>
+                    <br>
+                    C:\Users\유제환, 정소연> 최적화 : <span class="fas fa-star"></span><span class="fas fa-star"></span>
+                    <span class="fas fa-star-half-alt"></span><span class="far fa-star"></span><span class="far fa-star"></span>
+                    <br>
+                    C:\Users\유제환, 정소연> 사운드 : <span class="fas fa-star"></span><span class="fas fa-star"></span>
+                    <span class="fas fa-star"></span><span class="fas fa-star"></span><span class="far fa-star"></span>
+                    <br>
+                    C:\Users\유제환, 정소연> <br>
+                    C:\Users\유제환, 정소연> - 한줄평 - <br>
+                    C:\Users\유제환, 정소연> 이 게임은 여유를 즐기시고 싶은 분, 혹은 힐링을 하고 싶으신 분<br>
+                    C:\Users\유제환, 정소연> 이 플레이하신다면 매우 즐겁게 즐길 수 있는 게임입니다.<br>
+                    C:\Users\유제환, 정소연> 가격과 최적화의 별점이 낮은 이유는 이 게임 자체의 가격도 높고 <br>
+                    C:\Users\유제환, 정소연> 플레이하기 위해서는 닌텐도 스위치라는 게임기가 필요해서입니다. <br>
+                    C:\Users\유제환, 정소연> 그거외에는 노래도 좋고 스토리 힐링하기 좋은 편입니다.<br>
+                    C:\Users\유제환, 정소연> <span class="blank">__</span>
+                </p>
+            </div>
+        </div>
+        <div class="btn">
+            <button class="btn-left" onclick="plusDivs(-1)">&#10094;</button>
+            <button class="btn-right" onclick="plusDivs(1)">&#10095;</button>
+        </div>
+        <script>
+            var slideIndex = 1;
+            showDivs(slideIndex);
+
+            function plusDivs(n) {
+              showDivs(slideIndex += n);
+            }
+
+            function showDivs(n) {
+              var i;
+              var x = document.getElementsByClassName("mySlides");
+              if (n > x.length) {slideIndex = 1}
+              if (n < 1) {slideIndex = x.length}
+              for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+              }
+              x[slideIndex-1].style.display = "block";  
+            }
+                           
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

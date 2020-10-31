@@ -1,0 +1,420 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+        <script src="https://code.jquery.com/jquery-latest.js"></script>
+        <style>
+            
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            
+            /* 이건 플렉스 안에 있는 사진 */
+            .img {
+                width: 500px;
+                height: 300px;
+            }
+            
+            #content {
+                width: 500px;
+            }
+            
+            /* 플렉스 */
+            .container {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+                align-items: center;
+                align-content: center;
+            }
+            
+            /* 아이템 크기 플렉스 설정들 */
+            .container > div {
+                width: 502.2px;
+                flex-grow: 0; /* 창 크기에 따라 아이템 확대 보통은 0이 false 1이 true라고 생각해도 된다. */
+                flex-shrink: 1; /*  */
+                flex-basis: auto; /* 아이템 크기 */
+            }
+            
+            .item {
+                border-radius: 10px;
+                height: 600px;
+                /*border-right: 1px solid black;*/
+                background-color: white;
+                margin-bottom: 50px;
+                margin-top: 50px;
+                box-shadow: 10px 10px 3px 3px salmon;
+                
+            }
+            
+            .item > p {
+
+            }
+            
+            /* 옆에 내용 */
+            #content, .score {
+                padding-left: 20px;
+                padding-right: 20px;
+                /*border-top: 1px solid black;
+                border-bottom: 1px solid black;
+                border-right: 1px solid black;
+                */
+            }
+            
+            .item:hover {
+                cursor: pointer;
+            }
+            
+            .item:active {
+                
+            }
+            
+            /* 버튼들 */
+            .btn-left, .btn-right {
+                border: 1px solid black;
+                border-radius: 2px;
+                width: 50px;
+                height: 50px;
+                margin-bottom: 50px;
+                background-color: white;
+            }
+            
+            .btn-left {
+            }
+            
+            .btn {
+                width: 600px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .btn-left:hover, .btn-right:hover {
+                cursor: pointer;
+                background-color: peachpuff;
+                color: black;
+            }
+            
+            .btn-right {
+                margin-left: 450px;
+            }
+            
+            .black {
+                text-decoration: none;
+                color: black;
+            }
+            
+            .score {
+                display: none;
+            }
+            
+            #id01, #id02 {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 900px;
+                transform: translate(-50%, -50%);
+                background-color: white;
+                border: 1px solid black;
+                box-shadow: 0px 0px 10px 1000px rgba(169, 169, 169, 0.5);
+                display: none;
+                z-index: 999;
+            }
+            
+            .upsite {
+                border-bottom: 1px solid black;
+                padding-bottom: 2px;
+            }
+            
+            .close {
+                font-size: 1.2em;
+            }
+            
+            .colose:hover {
+                cursor: pointer;
+            }
+            
+            .under, .box {
+                margin-right: 15px;
+            }
+            
+            .under {
+                margin-left: 395px;
+            }
+            
+            .modal-content {
+                height: 500px;
+                background-color: black;
+                padding: 5px 0px 0px 5px;
+            }
+            
+            .modal-content p {
+                color: white;
+            }
+            
+            .blank {
+                animation: blink-animation 0.8s steps(10, start) infinite alternate;
+                -webkit-animation: blink-animation 0.8s steps(10, start) infinite alternate;
+            }
+            
+            @keyframes blink-animation {
+               from {
+                   visibility: visibility;
+               }
+               to {
+                   visibility: hidden;
+               }
+            }
+            
+            @-webkit-keyframes blink-animation {
+               from {
+                   visibility: visibility;
+               }
+               to {
+                   visibility: hidden;
+               }
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="mySlides">
+            <div class="container">
+                <div class="item" onclick="document.getElementById('id02').style.display='block'">
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="Image/animalcrossing.jpg" class="img">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="content">
+                                <br>
+                                <p>
+                                    동물의 숲 <br><br> 
+                                </p>
+                                <hr>
+                                <br>
+                                <p>
+                                    닌텐도
+                                </p>
+                                <br><hr><br>
+                                <p>
+                                     닌텐도의 비디오 게임이다. 주인공이 동물들이 살고 있는 숲 속의 마을로 이사를 가서 살면서 산책을 하고, 집을 인테리어하고, 곤충 채집을 하고, 낚시를 하고, 동물 이웃들과 교류하는 등의 활동을 하는 커뮤니케이션 게임이다.
+                                </p>
+                                <br>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="item" onclick="document.getElementById('id01').style.display='block'">
+                    <table>
+                        <tr>
+                            <td >
+                                <img src="Image/scrap.jpg" class="img">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="content">
+                                <br>
+                                <p>
+                                    Scrap Mechanic <br><br> 
+                                </p>
+                                <hr>
+                                <br>
+                                <p>
+                                    Axolot Games
+                                </p>
+                                <br><hr><br>
+                                <p>
+                                    스크랩 정비사의 창조적 천국으로 들어가 보십시오! 환상적인 기계를 만들고, 친구들과 모험을 떠나 이 상상력이 풍부한 멀티플레이어 서바이벌 샌드박스에서 사악한 팜봇들의 파도를 방어하십시오.
+                                </p>
+                                <br>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="item" onclick="document.getElementById('id01').style.display='block'">
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="Image/minecraft.png" class="img">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="content">
+                                <br>
+                                <p>
+                                    Minecraft<br><br> 
+                                </p>
+                                <hr>
+                                <br>
+                                <p>
+                                    모장 스튜디오
+                                </p>
+                                <br><hr><br>
+                                <p>
+                                     무한대의 자원을 이용할 수 있는 크리에이티브 모드로 플레이하거나 서바이벌 모드에서 월드 깊숙한 곳을 탐험하며 위험한 몹을 상대하기 위한 무기와 방어구를 만드세요. 모바일 장치나 Windows 10에서 싱글 모드 또는 친구들과 함께 만들고, 탐험하고, 생존하세요.
+                                </p>
+                                <br>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="item" onclick="document.getElementById('id01').style.display='block'">
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="Image/garrymod.jpg" class="img">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="content">
+                                <br>
+                                <p>
+                                    Garry's Mod <br><br> 
+                                </p>
+                                <hr>
+                                <br>
+                                <p>
+                                    Facepunch Studios
+                                </p>
+                                <br><hr><br>
+                                <p>
+                                    개리 모드는 물리학 샌드박스다. 어떤 사전 정의된 목표나 목표도 없다. 우리는 너에게 도구를 주고 널 놀게 내버려둔다.
+                                </p>
+                                <br>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div id="id01">
+            <div class="upsite">
+                <p style="display: inline; margin-left: 5px">
+                    C:\WINDOWS\system32\나만 친구 없어 &#91; Game &#93;.exe
+                </p>
+                <span class="under">
+                    __
+                </span>
+                <span class="box far fa-square">
+                </span>
+                <span onclick="document.getElementById('id01').style.display='none'" class="close">
+                    X
+                </span>
+            </div>
+            <div class="modal-content">
+                <p>
+                    Microsoft Windows [Version 10.0.17134.885] <br>
+                    (c) 2018 Microsoft Corporation. All rights reserved.<br>
+                    <br>
+                    C:\Users\유제환, 정소연> 재미 : <span class="fas fa-star"></span><span class="fas fa-star"></span>
+                    <span class="fas fa-star"></span><span class="fas fa-star"></span><span class="fas fa-star-half-alt"></span>
+                    <br>
+                    C:\Users\유제환, 정소연> 가격 : <span class="fas fa-star"></span><span class="fas fa-star"></span>
+                    <span class="fas fa-star"></span><span class="fas fa-star-half-alt"></span><span class="far fa-star"></span>
+                    <br>
+                    C:\Users\유제환, 정소연> 스토리 : <span class="fas fa-star"></span><span class="fas fa-star"></span>
+                    <span class="fas fa-star"></span><span class="fas fa-star"></span><span class="fas fa-star"></span>
+                    <br>
+                    C:\Users\유제환, 정소연> 최적화 : <span class="fas fa-star"></span><span class="fas fa-star"></span>
+                    <span class="fas fa-star"></span><span class="fas fa-star"></span><span class="fas fa-star"></span>
+                    <br>
+                    C:\Users\유제환, 정소연> 사운드 : <span class="fas fa-star"></span><span class="fas fa-star"></span>
+                    <span class="fas fa-star"></span><span class="fas fa-star"></span><span class="fas fa-star"></span>
+                    <br>
+                    C:\Users\유제환, 정소연> <br>
+                    C:\Users\유제환, 정소연> - 한줄평 - <br>
+                    C:\Users\유제환, 정소연> 이 게임은 인생을 돌아보게 만들면서도 재미까지 갖춰져있습니다.<br>
+                    C:\Users\유제환, 정소연> 그래픽 또한 가벼워 낮은 사양의 컴퓨터로도 플레이가 가능합니다.<br>
+                    C:\Users\유제환, 정소연> 자신이 무엇을 향해 나아가는지 고민하는 사람이라면 한번쯤 해보는 걸 추천합니다.
+                    C:\Users\유제환, 정소연> <span class="blank">__</span>
+                </p>
+            </div>
+        </div>
+        <div id="id02">
+            <div class="upsite">
+                <p style="display: inline; margin-left: 5px">
+                    C:\WINDOWS\system32\나만 친구 없어 &#91; Game &#93;.exe
+                </p>
+                <span class="under">
+                    __
+                </span>
+                <span class="box far fa-square">
+                </span>
+                <span onclick="document.getElementById('id02').style.display='none'" class="close">
+                    X
+                </span>
+            </div>
+            <div class="modal-content">
+                <p>
+                    Microsoft Windows [Version 10.0.17134.885] <br>
+                    (c) 2018 Microsoft Corporation. All rights reserved.<br>
+                    <br>
+                    C:\Users\유제환, 정소연> 재미 : <span class="fas fa-star"></span><span class="fas fa-star"></span>
+                    <span class="fas fa-star"></span><span class="fas fa-star-half-alt"></span><span class="far fa-star"></span>
+                    <br>
+                    C:\Users\유제환, 정소연> 가격 : <span class="fas fa-star"></span><span class="fas fa-star-half-alt"></span>
+                    <span class="far fa-star"></span><span class="far fa-star"></span><span class="far fa-star"></span>
+                    <br>
+                    C:\Users\유제환, 정소연> 스토리 : <span class="fas fa-star"></span><span class="fas fa-star"></span>
+                    <span class="fas fa-star"></span><span class="fas fa-star"></span><span class="fas fa-star"></span>
+                    <br>
+                    C:\Users\유제환, 정소연> 최적화 : <span class="fas fa-star"></span><span class="fas fa-star"></span>
+                    <span class="fas fa-star-half-alt"></span><span class="far fa-star"></span><span class="far fa-star"></span>
+                    <br>
+                    C:\Users\유제환, 정소연> 사운드 : <span class="fas fa-star"></span><span class="fas fa-star"></span>
+                    <span class="fas fa-star"></span><span class="fas fa-star"></span><span class="far fa-star"></span>
+                    <br>
+                    C:\Users\유제환, 정소연> <br>
+                    C:\Users\유제환, 정소연> - 한줄평 - <br>
+                    C:\Users\유제환, 정소연> 이 게임은 여유를 즐기시고 싶은 분, 혹은 힐링을 하고 싶으신 분<br>
+                    C:\Users\유제환, 정소연> 이 플레이하신다면 매우 즐겁게 즐길 수 있는 게임입니다.<br>
+                    C:\Users\유제환, 정소연> 가격과 최적화의 별점이 낮은 이유는 이 게임 자체의 가격도 높고 <br>
+                    C:\Users\유제환, 정소연> 플레이하기 위해서는 닌텐도 스위치라는 게임기가 필요해서입니다. <br>
+                    C:\Users\유제환, 정소연> 그거외에는 노래도 좋고 스토리 힐링하기 좋은 편입니다.<br>
+                    C:\Users\유제환, 정소연> <span class="blank">__</span>
+                </p>
+            </div>
+        </div>
+        <div class="btn">
+            <button class="btn-left" onclick="plusDivs(-1)">&#10094;</button>
+            <button class="btn-right" onclick="plusDivs(1)">&#10095;</button>
+        </div>
+        <script>
+            var slideIndex = 1;
+            showDivs(slideIndex);
+
+            function plusDivs(n) {
+              showDivs(slideIndex += n);
+            }
+
+            function showDivs(n) {
+              var i;
+              var x = document.getElementsByClassName("mySlides");
+              if (n > x.length) {slideIndex = 1}
+              if (n < 1) {slideIndex = x.length}
+              for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+              }
+              x[slideIndex-1].style.display = "block";  
+            }
+                           
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

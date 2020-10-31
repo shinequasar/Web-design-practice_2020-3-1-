@@ -1,0 +1,390 @@
+<!doctype html>
+<html>
+    <head>
+        <title>
+            나만 친구 없어 &#91; 책 &#93;
+        </title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/default2.css">
+        <link href="https://fonts.googleapis.com/css2?family=Sunflower:wght@300&display=swap" rel="stylesheet">
+        <style>
+            * {
+                font-family: 'Sunflower', sans-serif;
+            }
+            
+            .header > p {
+                right: 180px;
+                top: 120px;
+            }
+            
+            .show-book img {
+                width: 300px;
+                height: 380px;
+                border-radius: 3px;
+                box-shadow: 0px 0px 30px 7px lightsteelblue;
+                margin: 40px 0px 10px 135px;
+                /*border: 1px solid white;*/
+            }
+            
+            .show-book {
+                background: linear-gradient(to bottom , white, lightblue);
+                height: 458px;
+            }
+            
+            .show-book img:hover {
+                width: 320px;
+                height: 400px;
+                margin: 10px -20px 10px 135px;
+                border: none;
+                box-shadow: 0px 0px 30px 7px LIGHTSTEELBLUE;
+            }
+            
+            .detail-hiper {
+                color: black;
+            }
+            
+            .detail-nav {
+                top: 622px;
+                /*background: url(Image/book.jpg);*/
+            }
+            
+            .second-display {
+                top: 672px;
+                height: 1200px;
+                border-radius: 2px;
+               /* background: linear-gradient(to bottom , lightblue, white); */
+            }
+            
+            .sentence {
+                position: absolute;
+                top: 1805px;
+                left: 1%;
+                right: 1%;
+            }
+            
+            .item img {
+                width: 200px;
+                height: 300px;
+            }
+            
+            .sentence h1 {
+                padding-bottom: 20px;
+                border-bottom: 1px solid black;
+            }
+            
+            .container {
+                height: 1000px;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+                align-items: center;
+                align-content: center;
+            }
+            
+            .container > div {
+                width: 600px;
+                flex-grow: 0; /* 창 크기에 따라 아이템 확대 보통은 0이 false 1이 true라고 생각해도 된다. */
+                flex-shrink: 1; /*  */
+                flex-basis: auto; /* 아이템 크기 */
+            }
+            
+            .item {
+                border-radius: 10px;
+                /*border-right: 1px solid black;*/
+                background-color: white;
+                margin-bottom: 50px;
+                margin-top: 50px;
+                box-shadow: 10px 10px 3px 3px LIGHTSTEELBLUE;
+            }
+            
+            .item > p {
+
+            }
+            
+            .sentence-content {
+                position: absolute;
+                top: 1750px;
+            }
+            
+            #content {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            
+            .btn-left, .btn-right {
+                border: 1px solid black;
+                border-radius: 2px;
+                width: 50px;
+                height: 50px;
+                margin-bottom: 50px;
+                background-color: white;
+            }
+            
+            .btn-left {
+            }
+            
+            .btn {
+                width: 600px;
+                position: absolute;
+                top: 2650px;
+                left: 455px;
+            }
+            
+            .btn-left:hover, .btn-right:hover {
+                cursor: pointer;
+                background-color: lavender;
+                color: black;
+            }
+            
+            .btn-right {
+                margin-left: 450px;
+            }
+            
+            .black {
+                text-decoration: none;
+                color: black;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="nav">
+            <ul class="nav-container">
+                <li class="nav-item">
+                    <a class="hiper" href="Main.html">
+                        <i class="hiper2 hiper fa fa-home"></i>
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="hiper" href="bookcontent.html">
+                        <i class="hiper2 hiper fa fa-book"></i>
+                        Book
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="hiper" href="moviecontent.html">
+                        <i class="hiper2 hiper fa fa-ticket"></i>
+                        Movie
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="hiper" href="gamecontent.html">
+                        <i class="hiper2 hiper fa fa-gamepad"></i>
+                        Game
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="hiper" href="mbticontent.html">
+                        <i class="hiper2 hiper fa fa-clipboard"></i>
+                        MBTI
+                    </a>
+                </li>
+                <li class="nav-item info">
+                    <a class="hiper" href="info.html">
+                        <i class="hiper2 hiper fa fa-users"></i>
+                        My Page
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="header">
+            <h1>
+                Book
+            </h1>
+            <p>
+                혼자 있으면 뭐해, 책이라도 읽어야지
+            </p>
+        </div>
+        <div class="best">
+            <h1>
+                BEST 추천 도서
+            </h1>
+            <div class="show-book">
+                <img src="Image/secret.jpg">
+                <img src="Image/language.jpg">
+                <img src="Image/anonymous.jpg">
+            </div>
+        </div>
+        <div class="detail-nav">
+            <ul class="detail-nav-container">
+                <li class="detail-nav-item">
+                    <a class="detail-hiper" href="fiction.html" target="new">
+                        소설
+                    </a>
+                </li>
+                <li class="detail-nav-item">
+                    <a class="detail-hiper" href="human.html" target="new">
+                        철학 / 인물
+                    </a>
+                </li>
+                <li class="detail-nav-item">
+                    <a class="detail-hiper" href="science.html" target="new">
+                        과학
+                    </a>
+                </li>
+                <li class="detail-nav-item">
+                    <a class="detail-hiper" href="essay.html" target="new">
+                        에세이
+                    </a>
+                </li>
+                <li class="detail-nav-item last">
+                    <a class="detail-hiper" href="economic.html" target="new">
+                        경제
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="second-display">
+            <iframe src="averagebook.html" name="new" class="second-display-content"></iframe>
+        </div>
+        <div class="sentence">
+            <h1>
+                책 속 한 문장
+            </h1>
+        </div>
+        <div class="sentence-content">
+            <div class="mySlides">
+                <div class="container">
+                    <div class="item">
+                        <table>
+                            <tr>
+                                <td>
+                                    <img src="Image/perfume.jpg" class="img">
+                                </td>
+                                <td id="content">
+                                    <p>
+                                        나는 향수로 글을 쓴다 <br><br> 
+                                    </p>
+                                    <hr>
+                                    <br>
+                                    <p>
+                                        장 끌로드 앨레나
+                                    </p>
+                                    <br><hr><br><br>
+                                    <p>
+                                        가끔 향을 맡으면서도 병을 느끼지 못할 때가 있따. 그 순간 어떤 실망감 같은 것, 고독이 몰려온다. 그럴 땐 차라리 가만있는다. 금세 기분과 영감이 찾아 오리란 걸 알기 때문이다.
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="item">
+                        <table>
+                            <tr>
+                                <td>
+                                    <img src="Image/anonymous.jpg" class="img">
+                                </td>
+                                <td id="content">
+                                    <p>
+                                        익명의 독서 중독자들 <br><br> 
+                                    </p>
+                                    <hr>
+                                    <br>
+                                    <p>
+                                        이창현 글 / 육희 그림
+                                    </p>
+                                    <br><hr><br><br>
+                                    <p>
+                                        세상 어디에도 없는 독서클럽, 나만의 방식으로 책을 읽어가는 법
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="item">
+                        <table>
+                            <tr>
+                                <td>
+                                    <img src="Image/language.jpg" class="img">
+                                </td>
+                                <td id="content">
+                                    <p>
+                                        언어의 온도 <br><br> 
+                                    </p>
+                                    <hr>
+                                    <br>
+                                    <p>
+                                        이기주
+                                    </p>
+                                    <br><hr><br><br>
+                                    <p>
+                                        예쁜 말들이 많았던 책. 말 온도가 너무 뜨거웠거나, 글 온도가 너무 차가웠거나
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="item">
+                        <table>
+                            <tr>
+                                <td>
+                                    <img src="Image/thriller.jpg" class="img">
+                                </td>
+                                <td id="content">
+                                    <p>
+                                        아무튼 스릴러 <br><br> 
+                                    </p>
+                                    <hr>
+                                    <br>
+                                    <p>
+                                        이다혜
+                                    </p>
+                                    <br><hr><br><br>
+                                    <p>
+                                        범죄율의 팬은 타인의 불행과 나는 안전하다는 안도감을 소비하는가, 범죄의 해결을 소비하는가?<br>
+                                        다른 관심사를 좋아하는 생각 엿보기
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="btn">
+            <button class="btn-left" onclick="plusDivs(-1)">&#10094;</button>
+            <button class="btn-right" onclick="plusDivs(1)">&#10095;</button>
+        </div>
+        <script>
+            var slideIndex = 1;
+            showDivs(slideIndex);
+
+            function plusDivs(n) {
+              showDivs(slideIndex += n);
+            }
+
+            function showDivs(n) {
+              var i;
+              var x = document.getElementsByClassName("mySlides");
+              if (n > x.length) {slideIndex = 1}
+              if (n < 1) {slideIndex = x.length}
+              for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+              }
+              x[slideIndex-1].style.display = "block";  
+            }
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
